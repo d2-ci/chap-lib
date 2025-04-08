@@ -2,8 +2,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export type FeatureType = {
-    displayName: string
-    description: string
-    name?: string
-}
+export type DockerEnvConfig = {
+    image: string;
+};
+

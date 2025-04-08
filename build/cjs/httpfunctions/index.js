@@ -63,10 +63,17 @@ Object.defineProperty(exports, "PeriodType", {
     return _PeriodType.PeriodType;
   }
 });
+Object.defineProperty(exports, "UserOption", {
+  enumerable: true,
+  get: function () {
+    return _UserOption.UserOption;
+  }
+});
 var _ApiError = require("./core/ApiError");
 var _CancelablePromise = require("./core/CancelablePromise");
 var _OpenAPI = require("./core/OpenAPI");
 var _PeriodType = require("./models/PeriodType");
+var _UserOption = require("./models/UserOption");
 var _AnalyticsService = require("./services/AnalyticsService");
 var _CrudService = require("./services/CrudService");
 var _DebugService = require("./services/DebugService");

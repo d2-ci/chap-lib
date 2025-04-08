@@ -1,6 +1,7 @@
 import HighchartsReact from 'highcharts-react-official';
 import Highcharts from 'highcharts';
 import React, { useEffect, useState } from 'react';
+import { getPeriodNameFromId } from '../../../utils/Time';
 //import HighchartsMore from "highcharts/highcharts-more";
 //HighchartsMore(Highcharts); // Enables the 'arearange' series type
 function syncChartZoom(event) {
@@ -78,6 +79,15 @@ const getOptions = (data, modelName, syncZoom) => {
         },
         xAxis: {
             categories: data.periods, // Use periods as categories
+            labels: {
+                enabled: true,
+                formatter: function () {
+                    return getPeriodNameFromId(this.value);
+                },
+                style: {
+                    fontSize: '0.9rem',
+                },
+            },
             events: syncZoom && {
                 afterSetExtremes: syncChartZoom,
             },

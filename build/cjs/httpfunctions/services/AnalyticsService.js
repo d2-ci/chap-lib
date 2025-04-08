@@ -14,7 +14,7 @@ var _request = require("../core/request");
 class AnalyticsService {
   /**
    * Make Dataset
-   * This endpoint creates a dataset from the provided data and the data to be fetched
+   * This endpoint creates a dataset from the provided data and the data to be fetched3
    * and puts it in the database
    * @param requestBody
    * @returns JobResponse Successful Response
@@ -43,8 +43,8 @@ class AnalyticsService {
       method: 'GET',
       url: '/analytics/evaluation-entry',
       query: {
-        backtestId: backtestId,
-        quantiles: quantiles
+        'backtestId': backtestId,
+        'quantiles': quantiles
       },
       errors: {
         422: `Validation Error`
@@ -88,15 +88,19 @@ class AnalyticsService {
   /**
    * Get Prediction Entries
    * @param predictionId
+   * @param quantiles
    * @returns PredictionEntry Successful Response
    * @throws ApiError
    */
-  static getPredictionEntriesAnalyticsPredictionEntryPredictionIdGet(predictionId) {
+  static getPredictionEntriesAnalyticsPredictionEntryPredictionIdGet(predictionId, quantiles) {
     return (0, _request.request)(_OpenAPI.OpenAPI, {
       method: 'GET',
       url: '/analytics/prediction-entry/{predictionId}',
       path: {
-        predictionId: predictionId
+        'predictionId': predictionId
+      },
+      query: {
+        'quantiles': quantiles
       },
       errors: {
         422: `Validation Error`
@@ -112,13 +116,24 @@ class AnalyticsService {
   static getActualCasesAnalyticsActualCasesBacktestIdGet(backtestId) {
     return (0, _request.request)(_OpenAPI.OpenAPI, {
       method: 'GET',
-      url: '/analytics/actual-cases/{backtestId}',
+      url: '/analytics/actualCases/{backtestId}',
       path: {
-        backtestId: backtestId
+        'backtestId': backtestId
       },
       errors: {
         422: `Validation Error`
       }
+    });
+  }
+  /**
+   * Get Data Sources
+   * @returns DataSource Successful Response
+   * @throws ApiError
+   */
+  static getDataSourcesAnalyticsDataSourcesGet() {
+    return (0, _request.request)(_OpenAPI.OpenAPI, {
+      method: 'GET',
+      url: '/analytics/data-sources'
     });
   }
 }

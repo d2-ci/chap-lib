@@ -4,4 +4,5 @@ export type JobDescription = {
     status: string;
     start_time: string;
     hostname: string;
+    type: string;
 };

@@ -35,7 +35,7 @@ class JobsService {
       method: 'GET',
       url: '/jobs/{job_id}',
       path: {
-        job_id: jobId
+        'job_id': jobId
       },
       errors: {
         422: `Validation Error`
@@ -53,7 +53,7 @@ class JobsService {
       method: 'GET',
       url: '/jobs/{job_id}/prediction_result',
       path: {
-        job_id: jobId
+        'job_id': jobId
       },
       errors: {
         422: `Validation Error`
@@ -71,7 +71,7 @@ class JobsService {
       method: 'GET',
       url: '/jobs/{job_id}/evaluation_result',
       path: {
-        job_id: jobId
+        'job_id': jobId
       },
       errors: {
         422: `Validation Error`
@@ -89,7 +89,7 @@ class JobsService {
       method: 'GET',
       url: '/jobs/{job_id}/database_result',
       path: {
-        job_id: jobId
+        'job_id': jobId
       },
       errors: {
         422: `Validation Error`

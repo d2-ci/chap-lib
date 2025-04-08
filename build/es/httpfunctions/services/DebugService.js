@@ -14,12 +14,23 @@ export class DebugService {
             method: 'GET',
             url: '/debug/add-numbers',
             query: {
-                a: a,
-                b: b,
+                'a': a,
+                'b': b,
             },
             errors: {
                 422: `Validation Error`,
             },
+        });
+    }
+    /**
+     * Trigger Exception
+     * @returns JobResponse Successful Response
+     * @throws ApiError
+     */
+    static triggerExceptionDebugTriggerExceptionPost() {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/debug/trigger-exception',
         });
     }
     /**
@@ -34,7 +45,7 @@ export class DebugService {
             method: 'GET',
             url: '/debug/get-status',
             query: {
-                task_id: taskId,
+                'task_id': taskId,
             },
             errors: {
                 422: `Validation Error`,

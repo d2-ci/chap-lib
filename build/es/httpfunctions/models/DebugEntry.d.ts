@@ -1,4 +1,4 @@
 export type DebugEntry = {
-    id?: number | null;
+    id?: (number | null);
     timestamp: number;
 };

@@ -18,12 +18,12 @@ class CrudService {
    * @returns BackTestFull Successful Response
    * @throws ApiError
    */
-  static getBacktestCrudBacktestBacktestIdGet(backtestId) {
+  static getBacktestCrudBacktestsBacktestIdGet(backtestId) {
     return (0, _request.request)(_OpenAPI.OpenAPI, {
       method: 'GET',
-      url: '/crud/backtest/{backtestId}',
+      url: '/crud/backtests/{backtestId}',
       path: {
-        backtestId: backtestId
+        'backtestId': backtestId
       },
       errors: {
         422: `Validation Error`
@@ -35,10 +35,10 @@ class CrudService {
    * @returns BackTestRead Successful Response
    * @throws ApiError
    */
-  static getBacktestsCrudBacktestGet() {
+  static getBacktestsCrudBacktestsGet() {
     return (0, _request.request)(_OpenAPI.OpenAPI, {
       method: 'GET',
-      url: '/crud/backtest'
+      url: '/crud/backtests'
     });
   }
   /**
@@ -47,15 +47,26 @@ class CrudService {
    * @returns JobResponse Successful Response
    * @throws ApiError
    */
-  static createBacktestCrudBacktestPost(requestBody) {
+  static createBacktestCrudBacktestsPost(requestBody) {
     return (0, _request.request)(_OpenAPI.OpenAPI, {
       method: 'POST',
-      url: '/crud/backtest',
+      url: '/crud/backtests',
       body: requestBody,
       mediaType: 'application/json',
       errors: {
         422: `Validation Error`
       }
+    });
+  }
+  /**
+   * Get Predictions
+   * @returns PredictionInfo Successful Response
+   * @throws ApiError
+   */
+  static getPredictionsCrudPredictionsGet() {
+    return (0, _request.request)(_OpenAPI.OpenAPI, {
+      method: 'GET',
+      url: '/crud/predictions'
     });
   }
   /**
@@ -86,7 +97,7 @@ class CrudService {
       method: 'GET',
       url: '/crud/predictions/{predictionId}',
       path: {
-        predictionId: predictionId
+        'predictionId': predictionId
       },
       errors: {
         422: `Validation Error`
@@ -104,7 +115,7 @@ class CrudService {
       method: 'GET',
       url: '/crud/datasets/{datasetId}',
       path: {
-        datasetId: datasetId
+        'datasetId': datasetId
       },
       errors: {
         422: `Validation Error`
@@ -178,22 +189,11 @@ class CrudService {
       method: 'GET',
       url: '/crud/debug/{debugId}',
       path: {
-        debugId: debugId
+        'debugId': debugId
       },
       errors: {
         422: `Validation Error`
       }
-    });
-  }
-  /**
-   * List Feature Types
-   * @returns FeatureType Successful Response
-   * @throws ApiError
-   */
-  static listFeatureTypesCrudFeatureTypesGet() {
-    return (0, _request.request)(_OpenAPI.OpenAPI, {
-      method: 'GET',
-      url: '/crud/feature-types'
     });
   }
   /**
@@ -208,6 +208,35 @@ class CrudService {
     });
   }
   /**
+   * Get Failed Jobs
+   * @returns FailedJobRead Successful Response
+   * @throws ApiError
+   */
+  static getFailedJobsCrudFailedJobsGet() {
+    return (0, _request.request)(_OpenAPI.OpenAPI, {
+      method: 'GET',
+      url: '/crud/failedJobs'
+    });
+  }
+  /**
+   * Delete Failed Job
+   * @param failedJobId
+   * @returns any Successful Response
+   * @throws ApiError
+   */
+  static deleteFailedJobCrudFailedJobsFailedJobIdDelete(failedJobId) {
+    return (0, _request.request)(_OpenAPI.OpenAPI, {
+      method: 'DELETE',
+      url: '/crud/failedJobs/{failedJobId}',
+      path: {
+        'failedJobId': failedJobId
+      },
+      errors: {
+        422: `Validation Error`
+      }
+    });
+  }
+  /**
    * List Models
    * @returns ModelSpecRead Successful Response
    * @throws ApiError
@@ -216,6 +245,29 @@ class CrudService {
     return (0, _request.request)(_OpenAPI.OpenAPI, {
       method: 'GET',
       url: '/crud/models'
+    });
+  }
+  /**
+   * List Models From Model Templates
+   * @returns ModelSpecRead Successful Response
+   * @throws ApiError
+   */
+  static listModelsFromModelTemplatesCrudModelsFromModelTemplatesGet() {
+    return (0, _request.request)(_OpenAPI.OpenAPI, {
+      method: 'GET',
+      url: '/crud/models-from-model-templates'
+    });
+  }
+  /**
+   * List Model Templates
+   * Lists all model templates by reading local config files and presenting models.
+   * @returns ModelTemplateConfig Successful Response
+   * @throws ApiError
+   */
+  static listModelTemplatesCrudModelTemplatesGet() {
+    return (0, _request.request)(_OpenAPI.OpenAPI, {
+      method: 'GET',
+      url: '/crud/modelTemplates'
     });
   }
 }

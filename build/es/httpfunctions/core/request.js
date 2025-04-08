@@ -43,7 +43,7 @@ export const getQueryString = (params) => {
     const process = (key, value) => {
         if (isDefined(value)) {
             if (Array.isArray(value)) {
-                value.forEach((v) => {
+                value.forEach(v => {
                     process(key, v);
                 });
             }
@@ -96,7 +96,7 @@ export const getFormData = (options) => {
             .filter(([_, value]) => isDefined(value))
             .forEach(([key, value]) => {
             if (Array.isArray(value)) {
-                value.forEach((v) => process(key, v));
+                value.forEach(v => process(key, v));
             }
             else {
                 process(key, value);
@@ -141,8 +141,7 @@ export const getHeaders = async (config, options) => {
             headers['Content-Type'] = options.mediaType;
         }
         else if (isBlob(options.body)) {
-            headers['Content-Type'] =
-                options.body.type || 'application/octet-stream';
+            headers['Content-Type'] = options.body.type || 'application/octet-stream';
         }
         else if (isString(options.body)) {
             headers['Content-Type'] = 'text/plain';
@@ -158,9 +157,7 @@ export const getRequestBody = (options) => {
         if (options.mediaType?.includes('/json')) {
             return JSON.stringify(options.body);
         }
-        else if (isString(options.body) ||
-            isBlob(options.body) ||
-            isFormData(options.body)) {
+        else if (isString(options.body) || isBlob(options.body) || isFormData(options.body)) {
             return options.body;
         }
         else {
@@ -197,11 +194,8 @@ export const getResponseBody = async (response) => {
         try {
             const contentType = response.headers.get('Content-Type');
             if (contentType) {
-                const jsonTypes = [
-                    'application/json',
-                    'application/problem+json',
-                ];
-                const isJSON = jsonTypes.some((type) => contentType.toLowerCase().startsWith(type));
+                const jsonTypes = ['application/json', 'application/problem+json'];
+                const isJSON = jsonTypes.some(type => contentType.toLowerCase().startsWith(type));
                 if (isJSON) {
                     return await response.json();
                 }

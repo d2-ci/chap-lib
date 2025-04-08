@@ -1,7 +1,9 @@
 import type { EvaluationResponse } from '../models/EvaluationResponse';
 import type { Feature } from '../models/Feature';
 import type { FullPredictionResponse } from '../models/FullPredictionResponse';
+import type { HealthResponse } from '../models/HealthResponse';
 import type { ModelSpec } from '../models/ModelSpec';
+import type { ModelTemplateConfig } from '../models/ModelTemplateConfig';
 import type { PredictionRequest } from '../models/PredictionRequest';
 import type { State } from '../models/State';
 import type { CancelablePromise } from '../core/CancelablePromise';
@@ -31,7 +33,7 @@ export declare class DefaultService {
      * @returns any Successful Response
      * @throws ApiError
      */
-    static evaluateEvaluatePost(requestBody: PredictionRequest, nSplits?: number | null, stride?: number): CancelablePromise<Record<string, any>>;
+    static evaluateEvaluatePost(requestBody: PredictionRequest, nSplits?: (number | null), stride?: number): CancelablePromise<Record<string, any>>;
     /**
      * List Models
      * List all available models. These are not validated. Should set up test suite to validate them
@@ -40,6 +42,12 @@ export declare class DefaultService {
      */
     static listModelsListModelsGet(): CancelablePromise<Array<ModelSpec>>;
     /**
+     * List Model Templates
+     * @returns ModelTemplateConfig Successful Response
+     * @throws ApiError
+     */
+    static listModelTemplatesListModelTemplatesGet(): CancelablePromise<Array<ModelTemplateConfig>>;
+    /**
      * Get Logs
      * Retrieve logs from a job
      * @param jobId
@@ -47,7 +55,7 @@ export declare class DefaultService {
      * @returns string Successful Response
      * @throws ApiError
      */
-    static getLogsJobsJobIdLogsGet(jobId: string, nLines?: number | null): CancelablePromise<string>;
+    static getLogsJobsJobIdLogsGet(jobId: string, nLines?: (number | null)): CancelablePromise<string>;
     /**
      * List Features
      * List all available features
@@ -90,4 +98,10 @@ export declare class DefaultService {
      * @throws ApiError
      */
     static getStatusStatusGet(): CancelablePromise<State>;
+    /**
+     * Health
+     * @returns HealthResponse Successful Response
+     * @throws ApiError
+     */
+    static healthHealthGet(): CancelablePromise<HealthResponse>;
 }

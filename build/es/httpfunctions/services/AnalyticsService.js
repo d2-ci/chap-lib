@@ -3,7 +3,7 @@ import { request as __request } from '../core/request';
 export class AnalyticsService {
     /**
      * Make Dataset
-     * This endpoint creates a dataset from the provided data and the data to be fetched
+     * This endpoint creates a dataset from the provided data and the data to be fetched3
      * and puts it in the database
      * @param requestBody
      * @returns JobResponse Successful Response
@@ -32,8 +32,8 @@ export class AnalyticsService {
             method: 'GET',
             url: '/analytics/evaluation-entry',
             query: {
-                backtestId: backtestId,
-                quantiles: quantiles,
+                'backtestId': backtestId,
+                'quantiles': quantiles,
             },
             errors: {
                 422: `Validation Error`,
@@ -77,15 +77,19 @@ export class AnalyticsService {
     /**
      * Get Prediction Entries
      * @param predictionId
+     * @param quantiles
      * @returns PredictionEntry Successful Response
      * @throws ApiError
      */
-    static getPredictionEntriesAnalyticsPredictionEntryPredictionIdGet(predictionId) {
+    static getPredictionEntriesAnalyticsPredictionEntryPredictionIdGet(predictionId, quantiles) {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/analytics/prediction-entry/{predictionId}',
             path: {
-                predictionId: predictionId,
+                'predictionId': predictionId,
+            },
+            query: {
+                'quantiles': quantiles,
             },
             errors: {
                 422: `Validation Error`,
@@ -101,13 +105,24 @@ export class AnalyticsService {
     static getActualCasesAnalyticsActualCasesBacktestIdGet(backtestId) {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/analytics/actual-cases/{backtestId}',
+            url: '/analytics/actualCases/{backtestId}',
             path: {
-                backtestId: backtestId,
+                'backtestId': backtestId,
             },
             errors: {
                 422: `Validation Error`,
             },
+        });
+    }
+    /**
+     * Get Data Sources
+     * @returns DataSource Successful Response
+     * @throws ApiError
+     */
+    static getDataSourcesAnalyticsDataSourcesGet() {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/analytics/data-sources',
         });
     }
 }

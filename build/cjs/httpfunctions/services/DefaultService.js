@@ -58,8 +58,8 @@ class DefaultService {
       method: 'POST',
       url: '/evaluate',
       query: {
-        n_splits: nSplits,
-        stride: stride
+        'n_splits': nSplits,
+        'stride': stride
       },
       body: requestBody,
       mediaType: 'application/json',
@@ -81,6 +81,17 @@ class DefaultService {
     });
   }
   /**
+   * List Model Templates
+   * @returns ModelTemplateConfig Successful Response
+   * @throws ApiError
+   */
+  static listModelTemplatesListModelTemplatesGet() {
+    return (0, _request.request)(_OpenAPI.OpenAPI, {
+      method: 'GET',
+      url: '/list-model-templates'
+    });
+  }
+  /**
    * Get Logs
    * Retrieve logs from a job
    * @param jobId
@@ -93,10 +104,10 @@ class DefaultService {
       method: 'GET',
       url: '/jobs/{job_id}/logs',
       path: {
-        job_id: jobId
+        'job_id': jobId
       },
       query: {
-        n_lines: nLines
+        'n_lines': nLines
       },
       errors: {
         422: `Validation Error`
@@ -173,6 +184,17 @@ class DefaultService {
     return (0, _request.request)(_OpenAPI.OpenAPI, {
       method: 'GET',
       url: '/status'
+    });
+  }
+  /**
+   * Health
+   * @returns HealthResponse Successful Response
+   * @throws ApiError
+   */
+  static healthHealthGet() {
+    return (0, _request.request)(_OpenAPI.OpenAPI, {
+      method: 'GET',
+      url: '/health'
     });
   }
 }

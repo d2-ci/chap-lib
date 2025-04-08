@@ -79,7 +79,7 @@ class CancelablePromise {
     }));
   }
   get [Symbol.toStringTag]() {
-    return 'Cancellable Promise';
+    return "Cancellable Promise";
   }
   then(onFulfilled, onRejected) {
     return _classPrivateFieldGet(_promise, this).then(onFulfilled, onRejected);

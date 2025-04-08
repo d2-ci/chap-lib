@@ -1,15 +1,16 @@
-import type { chap_core__rest_api_src__v1__routers__analytics__PredictionCreate } from '../models/chap_core__rest_api_src__v1__routers__analytics__PredictionCreate';
 import type { DataList } from '../models/DataList';
 import type { DatasetMakeRequest } from '../models/DatasetMakeRequest';
+import type { DataSource } from '../models/DataSource';
 import type { EvaluationEntry } from '../models/EvaluationEntry';
 import type { JobResponse } from '../models/JobResponse';
+import type { MakePredictionRequest } from '../models/MakePredictionRequest';
 import type { MultiBacktestCreate } from '../models/MultiBacktestCreate';
 import type { PredictionEntry } from '../models/PredictionEntry';
 import type { CancelablePromise } from '../core/CancelablePromise';
 export declare class AnalyticsService {
     /**
      * Make Dataset
-     * This endpoint creates a dataset from the provided data and the data to be fetched
+     * This endpoint creates a dataset from the provided data and the data to be fetched3
      * and puts it in the database
      * @param requestBody
      * @returns JobResponse Successful Response
@@ -37,14 +38,15 @@ export declare class AnalyticsService {
      * @returns JobResponse Successful Response
      * @throws ApiError
      */
-    static makePredictionAnalyticsPredictionPost(requestBody: chap_core__rest_api_src__v1__routers__analytics__PredictionCreate): CancelablePromise<JobResponse>;
+    static makePredictionAnalyticsPredictionPost(requestBody: MakePredictionRequest): CancelablePromise<JobResponse>;
     /**
      * Get Prediction Entries
      * @param predictionId
+     * @param quantiles
      * @returns PredictionEntry Successful Response
      * @throws ApiError
      */
-    static getPredictionEntriesAnalyticsPredictionEntryPredictionIdGet(predictionId: number): CancelablePromise<Array<PredictionEntry>>;
+    static getPredictionEntriesAnalyticsPredictionEntryPredictionIdGet(predictionId: number, quantiles: Array<number>): CancelablePromise<Array<PredictionEntry>>;
     /**
      * Get Actual Cases
      * @param backtestId
@@ -52,4 +54,10 @@ export declare class AnalyticsService {
      * @throws ApiError
      */
     static getActualCasesAnalyticsActualCasesBacktestIdGet(backtestId: number): CancelablePromise<DataList>;
+    /**
+     * Get Data Sources
+     * @returns DataSource Successful Response
+     * @throws ApiError
+     */
+    static getDataSourcesAnalyticsDataSourcesGet(): CancelablePromise<Array<DataSource>>;
 }

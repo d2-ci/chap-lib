@@ -1,5 +1,5 @@
 export type BackTestMetric = {
-    id?: number | null;
+    id?: (number | null);
     backtestId: number;
     metricId: string;
     period: string;

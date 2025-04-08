@@ -5,7 +5,12 @@ export type ModelSpecRead = {
     supportedPeriodTypes?: PeriodType;
     description?: string;
     author?: string;
+    organization?: (string | null);
+    authorLogoUrl?: (string | null);
+    sourceUrl?: (string | null);
+    contactEmail?: (string | null);
+    citationInfo?: (string | null);
     id: number;
-    features: Array<FeatureTypeRead>;
+    covariates: Array<FeatureTypeRead>;
     target: FeatureTypeRead;
 };

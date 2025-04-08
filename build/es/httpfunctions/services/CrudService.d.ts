@@ -2,16 +2,18 @@ import type { BackTestCreate } from '../models/BackTestCreate';
 import type { BackTestFull } from '../models/BackTestFull';
 import type { BackTestRead } from '../models/BackTestRead';
 import type { Body_create_dataset_csv_crud_datasets_csvFile_post } from '../models/Body_create_dataset_csv_crud_datasets_csvFile_post';
-import type { chap_core__rest_api_src__v1__routers__crud__PredictionCreate } from '../models/chap_core__rest_api_src__v1__routers__crud__PredictionCreate';
 import type { DataBaseResponse } from '../models/DataBaseResponse';
 import type { DatasetCreate } from '../models/DatasetCreate';
 import type { DataSetRead } from '../models/DataSetRead';
 import type { DataSetWithObservations } from '../models/DataSetWithObservations';
 import type { DebugEntry } from '../models/DebugEntry';
+import type { FailedJobRead } from '../models/FailedJobRead';
 import type { FeatureSource } from '../models/FeatureSource';
-import type { FeatureType } from '../models/FeatureType';
 import type { JobResponse } from '../models/JobResponse';
 import type { ModelSpecRead } from '../models/ModelSpecRead';
+import type { ModelTemplateConfig } from '../models/ModelTemplateConfig';
+import type { PredictionCreate } from '../models/PredictionCreate';
+import type { PredictionInfo } from '../models/PredictionInfo';
 import type { PredictionRead } from '../models/PredictionRead';
 import type { CancelablePromise } from '../core/CancelablePromise';
 export declare class CrudService {
@@ -21,27 +23,33 @@ export declare class CrudService {
      * @returns BackTestFull Successful Response
      * @throws ApiError
      */
-    static getBacktestCrudBacktestBacktestIdGet(backtestId: number): CancelablePromise<BackTestFull>;
+    static getBacktestCrudBacktestsBacktestIdGet(backtestId: number): CancelablePromise<BackTestFull>;
     /**
      * Get Backtests
      * @returns BackTestRead Successful Response
      * @throws ApiError
      */
-    static getBacktestsCrudBacktestGet(): CancelablePromise<Array<BackTestRead>>;
+    static getBacktestsCrudBacktestsGet(): CancelablePromise<Array<BackTestRead>>;
     /**
      * Create Backtest
      * @param requestBody
      * @returns JobResponse Successful Response
      * @throws ApiError
      */
-    static createBacktestCrudBacktestPost(requestBody: BackTestCreate): CancelablePromise<JobResponse>;
+    static createBacktestCrudBacktestsPost(requestBody: BackTestCreate): CancelablePromise<JobResponse>;
+    /**
+     * Get Predictions
+     * @returns PredictionInfo Successful Response
+     * @throws ApiError
+     */
+    static getPredictionsCrudPredictionsGet(): CancelablePromise<Array<PredictionInfo>>;
     /**
      * Create Prediction
      * @param requestBody
      * @returns JobResponse Successful Response
      * @throws ApiError
      */
-    static createPredictionCrudPredictionsPost(requestBody: chap_core__rest_api_src__v1__routers__crud__PredictionCreate): CancelablePromise<JobResponse>;
+    static createPredictionCrudPredictionsPost(requestBody: PredictionCreate): CancelablePromise<JobResponse>;
     /**
      * Get Prediction
      * @param predictionId
@@ -91,20 +99,40 @@ export declare class CrudService {
     static getDebugEntryCrudDebugDebugIdGet(debugId: number): CancelablePromise<DebugEntry>;
     /**
      * List Feature Types
-     * @returns FeatureType Successful Response
-     * @throws ApiError
-     */
-    static listFeatureTypesCrudFeatureTypesGet(): CancelablePromise<Array<FeatureType>>;
-    /**
-     * List Feature Types
      * @returns FeatureSource Successful Response
      * @throws ApiError
      */
     static listFeatureTypesCrudFeatureSourcesGet(): CancelablePromise<Array<FeatureSource>>;
+    /**
+     * Get Failed Jobs
+     * @returns FailedJobRead Successful Response
+     * @throws ApiError
+     */
+    static getFailedJobsCrudFailedJobsGet(): CancelablePromise<Array<FailedJobRead>>;
+    /**
+     * Delete Failed Job
+     * @param failedJobId
+     * @returns any Successful Response
+     * @throws ApiError
+     */
+    static deleteFailedJobCrudFailedJobsFailedJobIdDelete(failedJobId: number): CancelablePromise<any>;
     /**
      * List Models
      * @returns ModelSpecRead Successful Response
      * @throws ApiError
      */
     static listModelsCrudModelsGet(): CancelablePromise<Array<ModelSpecRead>>;
+    /**
+     * List Models From Model Templates
+     * @returns ModelSpecRead Successful Response
+     * @throws ApiError
+     */
+    static listModelsFromModelTemplatesCrudModelsFromModelTemplatesGet(): CancelablePromise<Array<ModelSpecRead>>;
+    /**
+     * List Model Templates
+     * Lists all model templates by reading local config files and presenting models.
+     * @returns ModelTemplateConfig Successful Response
+     * @throws ApiError
+     */
+    static listModelTemplatesCrudModelTemplatesGet(): CancelablePromise<Array<ModelTemplateConfig>>;
 }
