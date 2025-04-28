@@ -4,3 +4,4 @@ declare const useOrgUnits: (orgUnitIds: any) => {
     loading: boolean;
 };
 export default useOrgUnits;
+//# sourceMappingURL=useOrgUnits.d.ts.map

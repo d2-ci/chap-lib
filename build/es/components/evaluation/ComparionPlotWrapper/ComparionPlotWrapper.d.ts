@@ -8,3 +8,4 @@ interface ComparionPlotWrapperProps {
 }
 export declare const ComparionPlotWrapper: ({ evaluationName, modelName, evaluations, splitPeriods, }: ComparionPlotWrapperProps) => React.JSX.Element;
 export {};
+//# sourceMappingURL=ComparionPlotWrapper.d.ts.map

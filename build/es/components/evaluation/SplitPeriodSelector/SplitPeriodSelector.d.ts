@@ -6,3 +6,4 @@ interface SplitPeriodSelectorProps {
 }
 declare const SplitPeriodSelector: ({ splitPeriods, setSelectedSplitPeriod, selectedSplitPeriod, }: SplitPeriodSelectorProps) => React.JSX.Element;
 export default SplitPeriodSelector;
+//# sourceMappingURL=SplitPeriodSelector.d.ts.map

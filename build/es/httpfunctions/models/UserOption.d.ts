@@ -12,3 +12,4 @@ export declare namespace UserOption {
         BOOLEAN = "boolean"
     }
 }
+//# sourceMappingURL=UserOption.d.ts.map

@@ -8,3 +8,4 @@ export type BackTestRead = {
     endDate?: (string | null);
     orgUnitIds?: Array<string>;
 };
+//# sourceMappingURL=BackTestRead.d.ts.map

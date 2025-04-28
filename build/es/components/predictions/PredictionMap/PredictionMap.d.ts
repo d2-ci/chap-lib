@@ -6,3 +6,4 @@ interface PredictionMapProps {
 }
 export declare const PredictionMap: ({ data, predictionTargetName, }: PredictionMapProps) => React.JSX.Element | null;
 export {};
+//# sourceMappingURL=PredictionMap.d.ts.map

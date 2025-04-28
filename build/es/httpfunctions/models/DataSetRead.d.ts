@@ -5,3 +5,4 @@ export type DataSetRead = {
     created: (string | null);
     covariates: Array<string>;
 };
+//# sourceMappingURL=DataSetRead.d.ts.map

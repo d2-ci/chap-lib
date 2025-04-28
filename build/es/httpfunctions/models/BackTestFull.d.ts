@@ -12,3 +12,4 @@ export type BackTestFull = {
     metrics: Array<BackTestMetric>;
     forecasts: Array<BackTestForecast>;
 };
+//# sourceMappingURL=BackTestFull.d.ts.map

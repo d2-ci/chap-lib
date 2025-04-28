@@ -120,3 +120,4 @@ export declare class DefaultService {
      */
     static systemInfoSystemInfoGet(): CancelablePromise<SystemInfoResponse>;
 }
+//# sourceMappingURL=DefaultService.d.ts.map

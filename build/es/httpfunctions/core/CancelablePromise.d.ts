@@ -18,3 +18,4 @@ export declare class CancelablePromise<T> implements Promise<T> {
     cancel(): void;
     get isCancelled(): boolean;
 }
+//# sourceMappingURL=CancelablePromise.d.ts.map

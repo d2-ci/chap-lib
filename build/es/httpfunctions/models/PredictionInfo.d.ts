@@ -7,3 +7,4 @@ export type PredictionInfo = {
     metaData?: Record<string, any>;
     id: number;
 };
+//# sourceMappingURL=PredictionInfo.d.ts.map

@@ -15,3 +15,4 @@ export type ModelSpecRead = {
     covariates: Array<FeatureTypeRead>;
     target: FeatureTypeRead;
 };
+//# sourceMappingURL=ModelSpecRead.d.ts.map

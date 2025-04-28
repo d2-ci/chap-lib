@@ -8,3 +8,4 @@ export declare class ApiError extends Error {
     readonly request: ApiRequestOptions;
     constructor(request: ApiRequestOptions, response: ApiResult, message: string);
 }
+//# sourceMappingURL=ApiError.d.ts.map

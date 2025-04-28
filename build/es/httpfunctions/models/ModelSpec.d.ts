@@ -9,3 +9,4 @@ export type ModelSpec = {
     author?: string;
     targets?: string;
 };
+//# sourceMappingURL=ModelSpec.d.ts.map

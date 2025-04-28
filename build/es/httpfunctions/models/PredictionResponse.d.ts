@@ -4,3 +4,4 @@ export type PredictionResponse = {
     period: string;
     value: number;
 };
+//# sourceMappingURL=PredictionResponse.d.ts.map

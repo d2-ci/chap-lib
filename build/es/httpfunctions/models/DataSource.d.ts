@@ -5,3 +5,4 @@ export type DataSource = {
     description: string;
     dataset: string;
 };
+//# sourceMappingURL=DataSource.d.ts.map

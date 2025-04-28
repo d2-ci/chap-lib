@@ -3,3 +3,4 @@ export declare const getUniqePeriods: (values: Array<PredictionResponseExtended>
 export declare const getUniqeOrgUnits: (values: Array<PredictionResponseExtended>) => string[];
 export declare const getUniqeQuantiles: (values: Array<PredictionResponseExtended>) => string[];
 export declare const findOrgUnitName: (orgUnitId: string, values: Array<PredictionResponseExtended>) => string | undefined;
+//# sourceMappingURL=PredictionResponse.d.ts.map

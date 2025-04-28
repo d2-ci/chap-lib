@@ -22,3 +22,4 @@ export interface ModelData {
     data: HighChartsData;
     modelName: string;
 }
+//# sourceMappingURL=Evaluation.d.ts.map

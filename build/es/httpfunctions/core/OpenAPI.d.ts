@@ -14,3 +14,4 @@ export type OpenAPIConfig = {
 };
 export declare const OpenAPI: OpenAPIConfig;
 export {};
+//# sourceMappingURL=OpenAPI.d.ts.map

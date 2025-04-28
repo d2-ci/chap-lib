@@ -65,3 +65,4 @@ export { CrudService } from './services/CrudService';
 export { DebugService } from './services/DebugService';
 export { DefaultService } from './services/DefaultService';
 export { JobsService } from './services/JobsService';
+//# sourceMappingURL=index.d.ts.map

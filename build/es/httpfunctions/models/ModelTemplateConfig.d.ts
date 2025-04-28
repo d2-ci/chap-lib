@@ -13,3 +13,4 @@ export type ModelTemplateConfig = {
     user_options?: Array<UserOption>;
     model_info?: (ModelInfo | null);
 };
+//# sourceMappingURL=ModelTemplateConfig.d.ts.map

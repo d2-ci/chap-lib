@@ -143,3 +143,4 @@ export declare class CrudService {
      */
     static listFeatureTypesCrudFeatureSourcesGet(): CancelablePromise<Array<FeatureSource>>;
 }
+//# sourceMappingURL=CrudService.d.ts.map

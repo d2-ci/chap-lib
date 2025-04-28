@@ -11,3 +11,4 @@ export type ApiRequestOptions = {
     readonly responseHeader?: string;
     readonly errors?: Record<number, string>;
 };
+//# sourceMappingURL=ApiRequestOptions.d.ts.map

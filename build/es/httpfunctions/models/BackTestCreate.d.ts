@@ -4,3 +4,4 @@ export type BackTestCreate = {
     name?: (string | null);
     created?: (string | null);
 };
+//# sourceMappingURL=BackTestCreate.d.ts.map

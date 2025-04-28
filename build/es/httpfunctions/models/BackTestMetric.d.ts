@@ -7,3 +7,4 @@ export type BackTestMetric = {
     lastSeenPeriod: string;
     value: number;
 };
+//# sourceMappingURL=BackTestMetric.d.ts.map

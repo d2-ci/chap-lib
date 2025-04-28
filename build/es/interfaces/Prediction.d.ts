@@ -6,3 +6,4 @@ export interface FullPredictionResponseExtended extends FullPredictionResponse {
 export interface PredictionResponseExtended extends PredictionResponse {
     displayName: string;
 }
+//# sourceMappingURL=Prediction.d.ts.map

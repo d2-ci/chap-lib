@@ -5,3 +5,4 @@ export type ApiResult = {
     readonly statusText: string;
     readonly body: any;
 };
+//# sourceMappingURL=ApiResult.d.ts.map

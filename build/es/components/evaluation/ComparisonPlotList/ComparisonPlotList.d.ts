@@ -7,3 +7,4 @@ interface ComparisonPlotListProps {
 }
 export declare const ComparisonPlotList: React.FC<ComparisonPlotListProps>;
 export {};
+//# sourceMappingURL=ComparisonPlotList.d.ts.map

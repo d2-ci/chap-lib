@@ -10,3 +10,4 @@ export type FeatureModel = {
     id?: (string | null);
     properties?: (Record<string, any> | null);
 };
+//# sourceMappingURL=FeatureModel.d.ts.map

@@ -4,3 +4,4 @@ export type PredictionEntry = {
     quantile: number;
     value: number;
 };
+//# sourceMappingURL=PredictionEntry.d.ts.map

@@ -6,3 +6,4 @@ interface PredicationChartProps {
 }
 export declare const UncertaintyAreaChart: ({ data, predictionTargetName, }: PredicationChartProps) => React.JSX.Element;
 export {};
+//# sourceMappingURL=UncertaintyAreaChart.d.ts.map

@@ -4,3 +4,4 @@ export type EvaluationResponse = {
     actualCases: DataList;
     predictions: Array<EvaluationEntry>;
 };
+//# sourceMappingURL=EvaluationResponse.d.ts.map

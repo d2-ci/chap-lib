@@ -26,3 +26,4 @@ interface FeatureCollection {
 }
 export declare const parseOrgUnits: (orgUnits: OrgUnit[]) => FeatureCollection;
 export {};
+//# sourceMappingURL=utils.d.ts.map

@@ -7,3 +7,4 @@ export type DataSetWithObservations = {
     observations: Array<ObservationBase>;
     created: (string | null);
 };
+//# sourceMappingURL=DataSetWithObservations.d.ts.map

@@ -3,3 +3,4 @@ export type MultiLineStringModel = {
     type?: string;
     coordinates: Array<Array<Coordinates>>;
 };
+//# sourceMappingURL=MultiLineStringModel.d.ts.map

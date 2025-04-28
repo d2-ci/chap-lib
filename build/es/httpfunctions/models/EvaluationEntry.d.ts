@@ -5,3 +5,4 @@ export type EvaluationEntry = {
     value: number;
     splitPeriod: string;
 };
+//# sourceMappingURL=EvaluationEntry.d.ts.map

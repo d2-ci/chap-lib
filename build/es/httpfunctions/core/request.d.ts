@@ -28,3 +28,4 @@ export declare const catchErrorCodes: (options: ApiRequestOptions, result: ApiRe
  */
 export declare const request: <T>(config: OpenAPIConfig, options: ApiRequestOptions) => CancelablePromise<T>;
 export {};
+//# sourceMappingURL=request.d.ts.map

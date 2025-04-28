@@ -8,3 +8,4 @@ export type DatasetMakeRequest = {
     providedData: Array<ObservationBase>;
     dataToBeFetched: Array<FetchRequest>;
 };
+//# sourceMappingURL=DatasetMakeRequest.d.ts.map

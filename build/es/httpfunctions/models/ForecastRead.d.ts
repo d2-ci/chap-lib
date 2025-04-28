@@ -3,3 +3,4 @@ export type ForecastRead = {
     orgUnit: string;
     values?: Array<number>;
 };
+//# sourceMappingURL=ForecastRead.d.ts.map

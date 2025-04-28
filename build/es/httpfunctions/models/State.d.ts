@@ -3,3 +3,4 @@ export type State = {
     status: string;
     progress?: number;
 };
+//# sourceMappingURL=State.d.ts.map

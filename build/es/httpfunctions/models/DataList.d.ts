@@ -4,3 +4,4 @@ export type DataList = {
     dhis2Id: string;
     data: Array<DataElement>;
 };
+//# sourceMappingURL=DataList.d.ts.map

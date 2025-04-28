@@ -2,10 +2,10 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-export var PeriodType;
-(function (PeriodType) {
-    PeriodType["WEEK"] = "week";
-    PeriodType["MONTH"] = "month";
-    PeriodType["ANY"] = "any";
-    PeriodType["YEAR"] = "year";
-})(PeriodType || (PeriodType = {}));
+export let PeriodType = /*#__PURE__*/function (PeriodType) {
+  PeriodType["WEEK"] = "week";
+  PeriodType["MONTH"] = "month";
+  PeriodType["ANY"] = "any";
+  PeriodType["YEAR"] = "year";
+  return PeriodType;
+}({});

@@ -6,3 +6,4 @@ export type MakeBacktestRequest = {
     nSplits: number;
     stride: number;
 };
+//# sourceMappingURL=MakeBacktestRequest.d.ts.map

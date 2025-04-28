@@ -3,3 +3,4 @@ export type FeatureTypeRead = {
     description: string;
     name: string;
 };
+//# sourceMappingURL=FeatureTypeRead.d.ts.map

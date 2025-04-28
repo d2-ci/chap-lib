@@ -20,3 +20,4 @@ export interface Properties {
     parentGraph: string;
     groups: string[];
 }
+//# sourceMappingURL=GeoJson.d.ts.map

@@ -11,3 +11,4 @@ export { PredictionMap } from './components/predictions/PredictionMap/Prediction
 export { FullPredictionResponseExtended, PredictionResponseExtended, } from './interfaces/Prediction';
 export { CrudService } from './httpfunctions/services/CrudService';
 export { AnalyticsService } from './httpfunctions/services/AnalyticsService';
+//# sourceMappingURL=index.d.ts.map

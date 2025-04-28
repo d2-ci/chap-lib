@@ -7,3 +7,4 @@ interface ResultPlotProps {
 }
 export declare const ResultPlot: ({ data, modelName, syncZoom }: ResultPlotProps) => React.JSX.Element;
 export {};
+//# sourceMappingURL=ResultPlot.d.ts.map

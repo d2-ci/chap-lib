@@ -3,3 +3,4 @@ export type DataElement = {
     ou: string;
     value: (number | null);
 };
+//# sourceMappingURL=DataElement.d.ts.map

@@ -9,3 +9,4 @@ export type PredictionRead = {
     id: number;
     forecasts: Array<ForecastRead>;
 };
+//# sourceMappingURL=PredictionRead.d.ts.map

@@ -4,3 +4,4 @@ export type ObservationBase = {
     value: (number | null);
     featureName: (string | null);
 };
+//# sourceMappingURL=ObservationBase.d.ts.map

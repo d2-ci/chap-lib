@@ -25,3 +25,4 @@ export declare class DebugService {
      */
     static getStatusDebugGetStatusGet(taskId?: (string | null)): CancelablePromise<Record<string, any>>;
 }
+//# sourceMappingURL=DebugService.d.ts.map

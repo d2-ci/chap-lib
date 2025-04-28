@@ -6,3 +6,4 @@ export type FeatureSource = {
     provider: string;
     supportedPeriodTypes?: Array<PeriodType>;
 };
+//# sourceMappingURL=FeatureSource.d.ts.map

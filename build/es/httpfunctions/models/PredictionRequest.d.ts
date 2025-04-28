@@ -7,3 +7,4 @@ export type PredictionRequest = {
     n_periods?: number;
     include_data?: boolean;
 };
+//# sourceMappingURL=PredictionRequest.d.ts.map

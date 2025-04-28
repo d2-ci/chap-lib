@@ -3,3 +3,4 @@ export type PredictionCreate = {
     estimatorId: string;
     nPeriods: number;
 };
+//# sourceMappingURL=PredictionCreate.d.ts.map

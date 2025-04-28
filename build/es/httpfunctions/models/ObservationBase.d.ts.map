@@ -1,0 +1,1 @@
+{"version":3,"file":"ObservationBase.d.ts","sourceRoot":"","sources":["../../../../src/httpfunctions/models/ObservationBase.ts"],"names":[],"mappings":"AAIA,MAAM,MAAM,eAAe,GAAG;IAC1B,MAAM,EAAE,MAAM,CAAC;IACf,OAAO,EAAE,MAAM,CAAC;IAChB,KAAK,EAAE,CAAC,MAAM,GAAG,IAAI,CAAC,CAAC;IACvB,WAAW,EAAE,CAAC,MAAM,GAAG,IAAI,CAAC,CAAC;CAChC,CAAC"}

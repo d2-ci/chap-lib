@@ -6,3 +6,4 @@ export type DatasetCreate = {
     geojson: FeatureCollectionModel;
     observations: Array<ObservationBase>;
 };
+//# sourceMappingURL=DatasetCreate.d.ts.map

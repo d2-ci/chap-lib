@@ -4,3 +4,4 @@ export declare function joinRealAndPredictedData(predictedData: HighChartsData, 
 export declare const evaluationResultToViewData: (data: EvaluationEntryExtend[], realValues: DataElement[], modelName?: string) => EvaluationForSplitPoint[];
 export declare function createHighChartsData(plotData: EvaluationEntryExtend[], quantileFunc: (item: any) => string): HighChartsData;
 export declare function getSplitPeriod(data: EvaluationEntry[]): string[];
+//# sourceMappingURL=EvaluationResponse.d.ts.map

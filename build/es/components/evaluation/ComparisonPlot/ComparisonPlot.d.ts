@@ -5,3 +5,4 @@ interface SideBySidePlotsProps {
 }
 export declare const ComparisonPlot: React.FC<SideBySidePlotsProps>;
 export {};
+//# sourceMappingURL=ComparisonPlot.d.ts.map

@@ -54,3 +54,4 @@ export declare class JobsService {
      */
     static getDatabaseResultJobsJobIdDatabaseResultGet(jobId: string): CancelablePromise<DataBaseResponse>;
 }
+//# sourceMappingURL=JobsService.d.ts.map

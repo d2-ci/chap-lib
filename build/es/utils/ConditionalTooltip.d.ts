@@ -6,3 +6,4 @@ type Props = {
 } & TooltipProps;
 export declare const ConditionalTooltip: (props: Props) => any;
 export {};
+//# sourceMappingURL=ConditionalTooltip.d.ts.map

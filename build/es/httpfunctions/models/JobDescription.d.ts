@@ -7,3 +7,4 @@ export type JobDescription = {
     end_time: (string | null);
     result: (string | null);
 };
+//# sourceMappingURL=JobDescription.d.ts.map

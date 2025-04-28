@@ -61,3 +61,4 @@ export declare class AnalyticsService {
      */
     static getDataSourcesAnalyticsDataSourcesGet(): CancelablePromise<Array<DataSource>>;
 }
+//# sourceMappingURL=AnalyticsService.d.ts.map

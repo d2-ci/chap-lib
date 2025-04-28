@@ -5,3 +5,4 @@ interface PredictionTableProps {
 }
 export declare const PredictionTable: ({ data }: PredictionTableProps) => React.JSX.Element;
 export {};
+//# sourceMappingURL=PredictionTable.d.ts.map

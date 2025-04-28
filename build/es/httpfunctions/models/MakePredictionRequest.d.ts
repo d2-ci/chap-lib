@@ -10,3 +10,4 @@ export type MakePredictionRequest = {
     modelId: string;
     metaData?: Record<string, any>;
 };
+//# sourceMappingURL=MakePredictionRequest.d.ts.map

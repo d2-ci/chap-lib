@@ -7,3 +7,4 @@ export type BackTestForecast = {
     lastSeenPeriod: string;
     values?: Array<number>;
 };
+//# sourceMappingURL=BackTestForecast.d.ts.map

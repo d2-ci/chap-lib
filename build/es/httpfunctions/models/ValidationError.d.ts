@@ -3,3 +3,4 @@ export type ValidationError = {
     msg: string;
     type: string;
 };
+//# sourceMappingURL=ValidationError.d.ts.map
