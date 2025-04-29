@@ -1,5 +1,0 @@
-{
-    "Prediction for ${findOrgUnitName(\n                                    ou,\n                                    dataValues\n                                )}": "Prediction for ${findOrgUnitName(\n                                    ou,\n                                    dataValues\n                                )}",
-    "Quantile median": "Quantile median",
-    "Range": "Range"
-}

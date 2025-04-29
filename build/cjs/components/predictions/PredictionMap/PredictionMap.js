@@ -14,6 +14,7 @@ var _Basemap = _interopRequireDefault(require("../../maps/Basemap"));
 var _utils = require("../../maps/utils");
 var _useOrgUnits = _interopRequireDefault(require("../../../hooks/useOrgUnits"));
 var _PredictionMapModule = _interopRequireDefault(require("./PredictionMap.module.css"));
+var _multiCalendarDates = require("@dhis2/multi-calendar-dates");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 const colors = ['#FFFFD4', '#FED98E', '#FE9929', '#D95F0E', '#993404'];
 const PredictionMap = _ref => {
@@ -41,7 +42,10 @@ const PredictionMap = _ref => {
     return /*#__PURE__*/_react.default.createElement("div", {
       className: _PredictionMapModule.default.predictionMapCard,
       key: index
-    }, /*#__PURE__*/_react.default.createElement("h4", null, "\uD83D\uDD51 ", _d2I18n.default.t((0, _PredictionResponse.numberDateToString)(period))), /*#__PURE__*/_react.default.createElement(_MapItem.default, {
+    }, /*#__PURE__*/_react.default.createElement("h4", null, _d2I18n.default.t((0, _multiCalendarDates.createFixedPeriodFromPeriodId)({
+      periodId: period,
+      calendar: 'gregory'
+    }).displayName)), /*#__PURE__*/_react.default.createElement(_MapItem.default, {
       key: period,
       index: index,
       count: periods.length,
@@ -54,7 +58,9 @@ const PredictionMap = _ref => {
       colors: colors
     })));
   })), /*#__PURE__*/_react.default.createElement(_Legend.default, {
-    title: 'Median Prediction for ' + predictionTargetName,
+    title: _d2I18n.default.t('Median Prediction for {{predictionTargetName}}', {
+      predictionTargetName
+    }),
     bins: bins,
     colors: colors
   })) : null;

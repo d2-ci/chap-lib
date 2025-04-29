@@ -1,14 +1,9 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
 import i18n from '@dhis2/d2-i18n'
 import { FullPredictionResponseExtended } from '../../../interfaces/Prediction'
-import { GeoJson } from '../../../interfaces/GeoJson'
 import {
     getUniqeOrgUnits,
-    findOrgUnitName,
     getUniqePeriods,
-    getUniqeQuantiles,
-    numberDateToString,
 } from '../../../utils/PredictionResponse'
 import MapItem from '../../maps/MapItem'
 import Choropleth from '../../maps/Choropleth'
@@ -17,6 +12,7 @@ import Basemap from '../../maps/Basemap'
 import { getEqualIntervals } from '../../maps/utils'
 import useOrgUnits from '../../../hooks/useOrgUnits'
 import styles from './PredictionMap.module.css'
+import { createFixedPeriodFromPeriodId } from '@dhis2/multi-calendar-dates'
 
 interface PredictionMapProps {
     data: FullPredictionResponseExtended
@@ -50,7 +46,12 @@ export const PredictionMap = ({
                     return (
                         <div className={styles.predictionMapCard} key={index}>
                             <h4>
-                                &#x1F551; {i18n.t(numberDateToString(period))}
+                                {i18n.t(
+                                    createFixedPeriodFromPeriodId({
+                                        periodId: period,
+                                        calendar: 'gregory',
+                                    }).displayName
+                                )}
                             </h4>
                             <MapItem
                                 key={period}
@@ -72,7 +73,9 @@ export const PredictionMap = ({
                 })}
             </div>
             <Legend
-                title={'Median Prediction for ' + predictionTargetName}
+                title={i18n.t('Median Prediction for {{predictionTargetName}}', {
+                    predictionTargetName,
+                })}
                 bins={bins}
                 colors={colors}
             />

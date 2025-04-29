@@ -24,26 +24,71 @@ function sortDhis2WeeklyAndMonthlyTime(a, b) {
   return parseDate(a).getTime() - parseDate(b).getTime();
 }
 function joinRealAndPredictedData(predictedData, realData) {
+  var _predictedData$midran;
   //number of periods in plot
-  const nPeriods = 52 * 3;
-  const predictionEnd = predictedData.periods[predictedData.periods.length - 1];
-  const realPeriodsFiltered = realData.map(item => item.pe).filter(period => period <= predictionEnd).sort(sortDhis2WeeklyAndMonthlyTime).slice(-nPeriods);
+  //some code below was commented out to always view full extent
+  //previously rolled the window based on the split period
+
+  //const nPeriods = 52 * 3
+  //const predictionEnd = predictedData.periods[predictedData.periods.length - 1]
+  const realPeriodsFiltered = realData.map(item => item.pe)
+  //.filter((period) => period <= predictionEnd)
+  .sort(sortDhis2WeeklyAndMonthlyTime);
+  //.slice(-nPeriods)
   const realDataFiltered = realPeriodsFiltered.map(period => {
     var _realData$find$value, _realData$find;
     return (_realData$find$value = (_realData$find = realData.find(item => item.pe === period)) === null || _realData$find === void 0 ? void 0 : _realData$find.value) !== null && _realData$find$value !== void 0 ? _realData$find$value : null;
   });
-  const padLength = realDataFiltered.length - predictedData.averages.length;
-  const lastReal = realDataFiltered[padLength - 1];
-  const paddedAverage = Array(padLength - 1).fill(null).concat([[lastReal]]).concat(predictedData.averages);
-  const paddedRanges = Array(padLength - 1).fill(null).concat([[lastReal, lastReal]]).concat(predictedData.ranges);
-  const paddedMidRanges = Array(padLength - 1).fill(null).concat([[lastReal, lastReal]]).concat(predictedData.midranges);
-  const allPeriods = realPeriodsFiltered.concat(predictedData.periods);
+
+  //turn prediction arrays into period dicts
+  const createLookup = (keys, values) => {
+    if (!values) {
+      return new Map();
+    }
+    const lookup = new Map();
+    for (let i = 0; i < keys.length; i++) {
+      lookup.set(keys[i], values[i]);
+    }
+    return lookup;
+  };
+  const averageLookup = createLookup(predictedData.periods, predictedData.averages.slice());
+  const rangeLookup = createLookup(predictedData.periods, predictedData.ranges.slice());
+  const midRangeLookup = createLookup(predictedData.periods, (_predictedData$midran = predictedData.midranges) === null || _predictedData$midran === void 0 ? void 0 : _predictedData$midran.slice());
+
+  //join prediction arrays into longer period arrays
+  /*
+  const mergePeriodValues = (
+      periods: string[],
+      periodValues: Map<string, any>,
+  ): any[] => {
+      const result = new Array(periods.length).fill(null)
+      console.log('periodvalues', periodValues)
+      for (let i = 0; i < periods.length; i++) {
+          const period = periods[i]
+          if (periodValues.has(period)) {
+              console.log('perval get', periodValues.get(period))
+              result[i] = periodValues.get(period)
+          }
+      }
+  
+      return result
+  }
+  */
+  const mergePeriodValues = (periods, periodValues) => {
+    return periods.map(period => {
+      var _periodValues$get;
+      return (_periodValues$get = periodValues.get(period)) !== null && _periodValues$get !== void 0 ? _periodValues$get : null;
+    });
+  };
+  const joinedAverages = mergePeriodValues(realPeriodsFiltered, averageLookup);
+  const joinedRanges = mergePeriodValues(realPeriodsFiltered, rangeLookup);
+  const joinedMidRanges = mergePeriodValues(realPeriodsFiltered, midRangeLookup);
   return {
-    periods: allPeriods,
-    ranges: paddedRanges,
-    averages: paddedAverage,
+    periods: realPeriodsFiltered,
+    ranges: joinedRanges,
+    averages: joinedAverages,
     realValues: realDataFiltered,
-    midranges: paddedMidRanges
+    midranges: joinedMidRanges
   };
 }
 const evaluationResultToViewData = (data, realValues, modelName) => {

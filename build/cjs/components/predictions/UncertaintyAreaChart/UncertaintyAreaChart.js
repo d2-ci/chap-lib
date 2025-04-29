@@ -13,7 +13,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _highchartsReactOfficial = _interopRequireDefault(require("highcharts-react-official"));
 var _UncertaintyAreaChartModule = _interopRequireDefault(require("./UncertaintyAreaChart.module.css"));
 var _ui = require("@dhis2/ui");
-var _PredictionResponse = require("../../../utils/PredictionResponse");
+var _multiCalendarDates = require("@dhis2/multi-calendar-dates");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function (e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
@@ -26,7 +26,10 @@ const getChartOptions = (data, predictionTargetName) => {
   const range = data.filter(d => d.dataElement === 'quantile_low').map(d => [d.period, d.value, data.filter(x => x.dataElement === 'quantile_high' && x.period === d.period)[0].value]);
   return {
     title: {
-      text: _d2I18n.default.t(`Prediction for ${predictionTargetName} for ${data[0].displayName}`)
+      text: _d2I18n.default.t('Prediction for {{predictionTargetName}} for {{orgUnitName}}', {
+        predictionTargetName,
+        orgUnitName: data[0].displayName
+      })
     },
     tooltip: {
       shared: true
@@ -36,7 +39,10 @@ const getChartOptions = (data, predictionTargetName) => {
       labels: {
         enabled: true,
         formatter: function () {
-          return (0, _PredictionResponse.numberDateToString)(this.value);
+          return (0, _multiCalendarDates.createFixedPeriodFromPeriodId)({
+            periodId: this.value.toString(),
+            calendar: 'gregory'
+          }).displayName;
         },
         style: {
           fontSize: '0.9rem'

@@ -16,7 +16,6 @@ function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e
 //HighchartsMore(Highcharts); // Enables the 'arearange' series type
 function syncChartZoom(event) {
   _highcharts.default.charts.forEach(chart => {
-    console.log(chart);
     if (chart) {
       chart.xAxis[0].setExtremes(event.min, event.max);
     }
@@ -40,7 +39,7 @@ const getSeries = data => {
     name: 'Predicted Cases',
     type: 'line',
     color: '#004bbd',
-    data: data.averages,
+    data: data.averages.slice(),
     zIndex: 3,
     opacity: 1,
     lineWidth: 2.5,
@@ -48,8 +47,8 @@ const getSeries = data => {
       enabled: false
     }
   }, {
-    name: 'Quantiles',
-    data: data.ranges,
+    name: 'Quantiles Outer',
+    data: data.ranges.slice(),
     type: 'arearange',
     lineWidth: 0,
     color: '#c4dcf2',
@@ -59,8 +58,8 @@ const getSeries = data => {
       enabled: false
     }
   }, {
-    name: 'QuantilesMid',
-    data: data.midranges,
+    name: 'Quantiles Middle',
+    data: data.midranges.slice(),
     type: 'arearange',
     lineWidth: 1,
     color: '#9bbdff',
@@ -131,7 +130,6 @@ const ResultPlot = _ref => {
   } = _ref;
   const [isRerendering, setIsRerendering] = (0, _react.useState)(false);
   (0, _react.useEffect)(() => {
-    console.log(data);
     setIsRerendering(true);
   }, [data]);
   (0, _react.useEffect)(() => {

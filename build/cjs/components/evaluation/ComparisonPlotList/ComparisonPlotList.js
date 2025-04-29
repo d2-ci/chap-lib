@@ -33,7 +33,7 @@ const ComparisonPlotList = _ref => {
   }
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_reactVirtuoso.Virtuoso, {
     style: {
-      height: '520px'
+      height: '60vh'
     },
     useWindowScroll: useVirtuosoWindowScroll,
     totalCount: evaluationPerOrgUnits.length,

@@ -12,7 +12,6 @@ const ComparisonPlot = _ref => {
   let {
     orgUnitsData
   } = _ref;
-  console.log('comparison plot data', orgUnitsData);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: _ComparisonPlotModule.default.comparionBox
   }, /*#__PURE__*/_react.default.createElement("div", {

@@ -57,10 +57,10 @@ class AnalyticsService {
    * @returns JobResponse Successful Response
    * @throws ApiError
    */
-  static createBacktestAnalyticsCreateBacktestsPost(requestBody) {
+  static createBacktestAnalyticsCreateBacktestPost(requestBody) {
     return (0, _request.request)(_OpenAPI.OpenAPI, {
       method: 'POST',
-      url: '/analytics/create_backtests',
+      url: '/analytics/create-backtest',
       body: requestBody,
       mediaType: 'application/json',
       errors: {
@@ -74,10 +74,10 @@ class AnalyticsService {
    * @returns JobResponse Successful Response
    * @throws ApiError
    */
-  static makePredictionAnalyticsPredictionPost(requestBody) {
+  static makePredictionAnalyticsMakePredictionPost(requestBody) {
     return (0, _request.request)(_OpenAPI.OpenAPI, {
       method: 'POST',
-      url: '/analytics/prediction',
+      url: '/analytics/make-prediction',
       body: requestBody,
       mediaType: 'application/json',
       errors: {

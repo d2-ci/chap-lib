@@ -15,6 +15,8 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
 const ComparionPlotWrapper = _ref => {
   var _allOrgUnits$;
   let {
+    evaluationName,
+    modelName,
     evaluations,
     splitPeriods
   } = _ref;
@@ -57,7 +59,7 @@ const ComparionPlotWrapper = _ref => {
     className: _ComparionPlotWrapperModule.default.wrapper
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: _ComparionPlotWrapperModule.default.filter
-  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, "Evaluation: ", evaluationName)), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
     className: _ComparionPlotWrapperModule.default.filterTitle
   }, "Split period:"), /*#__PURE__*/_react.default.createElement(_SplitPeriodSelector.default, {
     splitPeriods: splitPeriods,
@@ -65,15 +67,17 @@ const ComparionPlotWrapper = _ref => {
     selectedSplitPeriod: selectedSplitPeriod
   })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
     className: _ComparionPlotWrapperModule.default.filterTitle
-  }, "Organization units:"), allOrgUnits.map((orgUnit, i) => /*#__PURE__*/_react.default.createElement(_ui.Checkbox, {
+  }, "Organization units:"), /*#__PURE__*/_react.default.createElement("div", {
+    className: _ComparionPlotWrapperModule.default.filterCheckbox
+  }, allOrgUnits.map((orgUnit, i) => /*#__PURE__*/_react.default.createElement(_ui.Checkbox, {
     checked: selectedOrgUnits.filter(o => o == orgUnit.id).length > 0,
     onChange: onChangeOrgUnitSelected,
     label: orgUnit.name,
     key: orgUnit.id,
     value: orgUnit.id
-  })))), /*#__PURE__*/_react.default.createElement("div", {
+  }))))), /*#__PURE__*/_react.default.createElement("div", {
     className: _ComparionPlotWrapperModule.default.plots
-  }, /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, "Model: ", modelName)), /*#__PURE__*/_react.default.createElement("div", {
     className: _ComparionPlotWrapperModule.default.searchInput
   }, /*#__PURE__*/_react.default.createElement(_ui.InputField, {
     label: "Search for organization units:",

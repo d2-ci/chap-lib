@@ -92,29 +92,6 @@ class DefaultService {
     });
   }
   /**
-   * Get Logs
-   * Retrieve logs from a job
-   * @param jobId
-   * @param nLines
-   * @returns string Successful Response
-   * @throws ApiError
-   */
-  static getLogsJobsJobIdLogsGet(jobId, nLines) {
-    return (0, _request.request)(_OpenAPI.OpenAPI, {
-      method: 'GET',
-      url: '/jobs/{job_id}/logs',
-      path: {
-        'job_id': jobId
-      },
-      query: {
-        'n_lines': nLines
-      },
-      errors: {
-        422: `Validation Error`
-      }
-    });
-  }
-  /**
    * List Features
    * List all available features
    * @returns Feature Successful Response
@@ -195,6 +172,49 @@ class DefaultService {
     return (0, _request.request)(_OpenAPI.OpenAPI, {
       method: 'GET',
       url: '/health'
+    });
+  }
+  /**
+   * Version
+   * Retrieve the current version of the API
+   * @returns any Successful Response
+   * @throws ApiError
+   */
+  static versionVersionGet() {
+    return (0, _request.request)(_OpenAPI.OpenAPI, {
+      method: 'GET',
+      url: '/version'
+    });
+  }
+  /**
+   * Is Compatible
+   * Check if the modelling app version is compatible with the current API version
+   * @param modellingAppVersion
+   * @returns CompatibilityResponse Successful Response
+   * @throws ApiError
+   */
+  static isCompatibleIsCompatibleGet(modellingAppVersion) {
+    return (0, _request.request)(_OpenAPI.OpenAPI, {
+      method: 'GET',
+      url: '/is-compatible',
+      query: {
+        'modelling_app_version': modellingAppVersion
+      },
+      errors: {
+        422: `Validation Error`
+      }
+    });
+  }
+  /**
+   * System Info
+   * Retrieve system information
+   * @returns SystemInfoResponse Successful Response
+   * @throws ApiError
+   */
+  static systemInfoSystemInfoGet() {
+    return (0, _request.request)(_OpenAPI.OpenAPI, {
+      method: 'GET',
+      url: '/system-info'
     });
   }
 }
