@@ -7,9 +7,9 @@ export {
     joinRealAndPredictedData,
 } from './utils/EvaluationResponse'
 export { ConditionalTooltip } from './utils/ConditionalTooltip'
-export {
-    HighChartsData,
+export type {
     EvaluationEntryExtend,
+    HighChartsData,
     EvaluationForSplitPoint,
     EvaluationPerOrgUnit,
     ModelData,
@@ -21,7 +21,7 @@ export { PredictionTable } from './components/predictions/PredictionTable/Predic
 export { PredictionMap } from './components/predictions/PredictionMap/PredictionMap'
 
 //interfaces
-export {
+export type {
     FullPredictionResponseExtended,
     PredictionResponseExtended,
 } from './interfaces/Prediction'

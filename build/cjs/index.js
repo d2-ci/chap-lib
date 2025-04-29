@@ -10,18 +10,11 @@ var _exportNames = {
   createHighChartsData: true,
   joinRealAndPredictedData: true,
   ConditionalTooltip: true,
-  HighChartsData: true,
-  EvaluationEntryExtend: true,
-  EvaluationForSplitPoint: true,
-  EvaluationPerOrgUnit: true,
-  ModelData: true,
   ResultPlot: true,
   ComparisonPlotList: true,
   ComparionPlotWrapper: true,
   PredictionTable: true,
   PredictionMap: true,
-  FullPredictionResponseExtended: true,
-  PredictionResponseExtended: true,
   CrudService: true,
   AnalyticsService: true
 };
@@ -55,52 +48,10 @@ Object.defineProperty(exports, "CrudService", {
     return _CrudService.CrudService;
   }
 });
-Object.defineProperty(exports, "EvaluationEntryExtend", {
-  enumerable: true,
-  get: function () {
-    return _Evaluation.EvaluationEntryExtend;
-  }
-});
-Object.defineProperty(exports, "EvaluationForSplitPoint", {
-  enumerable: true,
-  get: function () {
-    return _Evaluation.EvaluationForSplitPoint;
-  }
-});
-Object.defineProperty(exports, "EvaluationPerOrgUnit", {
-  enumerable: true,
-  get: function () {
-    return _Evaluation.EvaluationPerOrgUnit;
-  }
-});
-Object.defineProperty(exports, "FullPredictionResponseExtended", {
-  enumerable: true,
-  get: function () {
-    return _Prediction.FullPredictionResponseExtended;
-  }
-});
-Object.defineProperty(exports, "HighChartsData", {
-  enumerable: true,
-  get: function () {
-    return _Evaluation.HighChartsData;
-  }
-});
-Object.defineProperty(exports, "ModelData", {
-  enumerable: true,
-  get: function () {
-    return _Evaluation.ModelData;
-  }
-});
 Object.defineProperty(exports, "PredictionMap", {
   enumerable: true,
   get: function () {
     return _PredictionMap.PredictionMap;
-  }
-});
-Object.defineProperty(exports, "PredictionResponseExtended", {
-  enumerable: true,
-  get: function () {
-    return _Prediction.PredictionResponseExtended;
   }
 });
 Object.defineProperty(exports, "PredictionTable", {
@@ -160,12 +111,10 @@ Object.keys(_index).forEach(function (key) {
 });
 var _EvaluationResponse = require("./utils/EvaluationResponse");
 var _ConditionalTooltip = require("./utils/ConditionalTooltip");
-var _Evaluation = require("./interfaces/Evaluation");
 var _ResultPlot = require("./components/evaluation/ResultPlot/ResultPlot");
 var _ComparisonPlotList = require("./components/evaluation/ComparisonPlotList/ComparisonPlotList");
 var _ComparionPlotWrapper = require("./components/evaluation/ComparionPlotWrapper/ComparionPlotWrapper");
 var _PredictionTable = require("./components/predictions/PredictionTable/PredictionTable");
 var _PredictionMap = require("./components/predictions/PredictionMap/PredictionMap");
-var _Prediction = require("./interfaces/Prediction");
 var _CrudService = require("./httpfunctions/services/CrudService");
 var _AnalyticsService = require("./httpfunctions/services/AnalyticsService");
