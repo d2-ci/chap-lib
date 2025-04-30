@@ -1,0 +1,1 @@
+{"version":3,"file":"PredictionResponse.d.ts","sourceRoot":"","sources":["../../../../src/httpfunctions/models/PredictionResponse.ts"],"names":[],"mappings":"AAIA,MAAM,MAAM,kBAAkB,GAAG;IAC7B,OAAO,EAAE,MAAM,CAAC;IAChB,WAAW,EAAE,MAAM,CAAC;IACpB,MAAM,EAAE,MAAM,CAAC;IACf,KAAK,EAAE,MAAM,CAAC;CACjB,CAAC"}
