@@ -15,6 +15,7 @@ var _exportNames = {
   ComparionPlotWrapper: true,
   PredictionTable: true,
   PredictionMap: true,
+  Card: true,
   CrudService: true,
   AnalyticsService: true
 };
@@ -22,6 +23,12 @@ Object.defineProperty(exports, "AnalyticsService", {
   enumerable: true,
   get: function () {
     return _AnalyticsService.AnalyticsService;
+  }
+});
+Object.defineProperty(exports, "Card", {
+  enumerable: true,
+  get: function () {
+    return _Card.Card;
   }
 });
 Object.defineProperty(exports, "ComparionPlotWrapper", {
@@ -116,5 +123,6 @@ var _ComparisonPlotList = require("./components/evaluation/ComparisonPlotList/Co
 var _ComparionPlotWrapper = require("./components/evaluation/ComparionPlotWrapper/ComparionPlotWrapper");
 var _PredictionTable = require("./components/predictions/PredictionTable/PredictionTable");
 var _PredictionMap = require("./components/predictions/PredictionMap/PredictionMap");
+var _Card = require("./ui/Card");
 var _CrudService = require("./httpfunctions/services/CrudService");
 var _AnalyticsService = require("./httpfunctions/services/AnalyticsService");
