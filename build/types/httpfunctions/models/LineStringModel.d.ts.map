@@ -1,0 +1,1 @@
+{"version":3,"file":"LineStringModel.d.ts","sourceRoot":"","sources":["../../../../src/httpfunctions/models/LineStringModel.ts"],"names":[],"mappings":"AAIA,OAAO,KAAK,EAAE,WAAW,EAAE,MAAM,eAAe,CAAC;AACjD,MAAM,MAAM,eAAe,GAAG;IAC1B,IAAI,CAAC,EAAE,MAAM,CAAC;IACd,WAAW,EAAE,KAAK,CAAC,WAAW,CAAC,CAAC;CACnC,CAAC"}
