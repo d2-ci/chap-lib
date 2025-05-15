@@ -1,0 +1,1 @@
+{"version":3,"file":"FullPredictionResponse.d.ts","sourceRoot":"","sources":["../../../../src/httpfunctions/models/FullPredictionResponse.ts"],"names":[],"mappings":"AAIA,OAAO,KAAK,EAAE,kBAAkB,EAAE,MAAM,sBAAsB,CAAC;AAC/D,MAAM,MAAM,sBAAsB,GAAG;IACjC,SAAS,EAAE,MAAM,CAAC;IAClB,UAAU,EAAE,KAAK,CAAC,kBAAkB,CAAC,CAAC;CACzC,CAAC"}
