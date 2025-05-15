@@ -60,7 +60,7 @@ export const ComparionPlotWrapper = _ref => {
     className: styles.filterTitle
   }, "Organization units:"), /*#__PURE__*/React.createElement("div", {
     className: styles.filterCheckbox
-  }, allOrgUnits.map((orgUnit, i) => /*#__PURE__*/React.createElement(Checkbox, {
+  }, allOrgUnits.map(orgUnit => /*#__PURE__*/React.createElement(Checkbox, {
     checked: selectedOrgUnits.filter(o => o == orgUnit.id).length > 0,
     onChange: onChangeOrgUnitSelected,
     label: orgUnit.name,

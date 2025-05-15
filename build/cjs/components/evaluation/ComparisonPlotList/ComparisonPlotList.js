@@ -15,18 +15,27 @@ const ComparisonPlotList = _ref => {
     useVirtuosoWindowScroll = false
   } = _ref;
   function getItemContent() {
-    return index => {
+    const ItemContent = index => {
       const orgUnitsData = evaluationPerOrgUnits[index];
-      return orgUnitsData && /*#__PURE__*/_react.default.createElement("div", {
+      if (!orgUnitsData) {
+        return null;
+      }
+      return /*#__PURE__*/_react.default.createElement("div", {
         key: orgUnitsData.orgUnitId
       }, /*#__PURE__*/_react.default.createElement(_ComparisonPlot.ComparisonPlot, {
         orgUnitsData: orgUnitsData
       }));
     };
+    ItemContent.displayName = 'ItemContent';
+    return ItemContent;
   }
   if (!useVirtuoso) {
-    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, evaluationPerOrgUnits.map((orgUnitsData, index) => {
+    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, evaluationPerOrgUnits.map(orgUnitsData => {
+      if (!orgUnitsData) {
+        return null;
+      }
       return /*#__PURE__*/_react.default.createElement(_ComparisonPlot.ComparisonPlot, {
+        key: orgUnitsData.orgUnitId,
         orgUnitsData: orgUnitsData
       });
     }));
