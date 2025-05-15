@@ -6,6 +6,7 @@ import type { DataSource } from '../models/DataSource';
 import type { EvaluationEntry } from '../models/EvaluationEntry';
 import type { JobResponse } from '../models/JobResponse';
 import type { MakeBacktestRequest } from '../models/MakeBacktestRequest';
+import type { MakeBacktestWithDataRequest } from '../models/MakeBacktestWithDataRequest';
 import type { MakePredictionRequest } from '../models/MakePredictionRequest';
 import type { PredictionEntry } from '../models/PredictionEntry';
 import type { CancelablePromise } from '../core/CancelablePromise';
@@ -54,6 +55,13 @@ export declare class AnalyticsService {
      * @throws ApiError
      */
     static createBacktestAnalyticsCreateBacktestPost(requestBody: MakeBacktestRequest): CancelablePromise<JobResponse>;
+    /**
+     * Create Backtest With Data
+     * @param requestBody
+     * @returns JobResponse Successful Response
+     * @throws ApiError
+     */
+    static createBacktestWithDataAnalyticsCreateBacktestWithDataPost(requestBody: MakeBacktestWithDataRequest): CancelablePromise<JobResponse>;
     /**
      * Make Prediction
      * @param requestBody

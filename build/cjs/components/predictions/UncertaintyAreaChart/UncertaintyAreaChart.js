@@ -21,7 +21,6 @@ function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e
 (0, _exporting.default)(_highcharts.default);
 (0, _highchartsMore.default)(_highcharts.default);
 const getChartOptions = (data, predictionTargetName) => {
-  const colors = _highcharts.default.getOptions().colors;
   const median = data.filter(d => d.dataElement === 'median').map(d => [d.period, d.value]);
   const range = data.filter(d => d.dataElement === 'quantile_low').map(d => [d.period, d.value, data.filter(x => x.dataElement === 'quantile_high' && x.period === d.period)[0].value]);
   return {

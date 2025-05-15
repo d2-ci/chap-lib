@@ -2,10 +2,6 @@ import HighchartsReact from 'highcharts-react-official';
 import Highcharts from 'highcharts';
 import React, { useEffect, useState } from 'react';
 import { getPeriodNameFromId } from '../../../utils/Time';
-
-//import HighchartsMore from "highcharts/highcharts-more";
-
-//HighchartsMore(Highcharts); // Enables the 'arearange' series type
 function syncChartZoom(event) {
   Highcharts.charts.forEach(chart => {
     if (chart) {
