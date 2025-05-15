@@ -12,7 +12,6 @@ accessibility(Highcharts);
 exporting(Highcharts);
 highchartsMore(Highcharts);
 const getChartOptions = (data, predictionTargetName) => {
-  const colors = Highcharts.getOptions().colors;
   const median = data.filter(d => d.dataElement === 'median').map(d => [d.period, d.value]);
   const range = data.filter(d => d.dataElement === 'quantile_low').map(d => [d.period, d.value, data.filter(x => x.dataElement === 'quantile_high' && x.period === d.period)[0].value]);
   return {

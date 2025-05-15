@@ -1,7 +1,6 @@
 /* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
-/* eslint-disable */
 
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';

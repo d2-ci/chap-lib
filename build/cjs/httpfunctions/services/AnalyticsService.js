@@ -9,7 +9,6 @@ var _request = require("../core/request");
 /* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
-/* eslint-disable */
 
 class AnalyticsService {
   /**
