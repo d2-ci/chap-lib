@@ -56,11 +56,11 @@ export const ComparionPlotWrapper = _ref => {
     splitPeriods: splitPeriods,
     setSelectedSplitPeriod: setSelectedSplitPeriod,
     selectedSplitPeriod: selectedSplitPeriod
-  })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  })), /*#__PURE__*/React.createElement("div", {
     className: styles.filterTitle
   }, "Organization units:"), /*#__PURE__*/React.createElement("div", {
-    className: styles.filterCheckbox
-  }, allOrgUnits.map((orgUnit, i) => /*#__PURE__*/React.createElement(Checkbox, {
+    className: styles.filterContent
+  }, /*#__PURE__*/React.createElement("div", null, allOrgUnits.map((orgUnit, i) => /*#__PURE__*/React.createElement(Checkbox, {
     checked: selectedOrgUnits.filter(o => o == orgUnit.id).length > 0,
     onChange: onChangeOrgUnitSelected,
     label: orgUnit.name,
