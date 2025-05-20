@@ -49,7 +49,7 @@ const OverflowButton = _ref => {
     onBackdropClick: toggle
   }, /*#__PURE__*/_react.default.createElement(_ui.Popper, {
     reference: anchorRef,
-    placement: "bottom-end"
+    placement: "bottom-start"
   }, component)));
 };
 exports.OverflowButton = OverflowButton;

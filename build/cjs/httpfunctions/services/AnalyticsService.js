@@ -114,23 +114,6 @@ class AnalyticsService {
     });
   }
   /**
-   * Create Backtest With Data
-   * @param requestBody
-   * @returns JobResponse Successful Response
-   * @throws ApiError
-   */
-  static createBacktestWithDataAnalyticsCreateBacktestWithDataPost(requestBody) {
-    return (0, _request.request)(_OpenAPI.OpenAPI, {
-      method: 'POST',
-      url: '/analytics/create-backtest-with-data',
-      body: requestBody,
-      mediaType: 'application/json',
-      errors: {
-        422: `Validation Error`
-      }
-    });
-  }
-  /**
    * Make Prediction
    * @param requestBody
    * @returns JobResponse Successful Response
@@ -201,6 +184,23 @@ class AnalyticsService {
     return (0, _request.request)(_OpenAPI.OpenAPI, {
       method: 'GET',
       url: '/analytics/data-sources'
+    });
+  }
+  /**
+   * Create Backtest With Data
+   * @param requestBody
+   * @returns JobResponse Successful Response
+   * @throws ApiError
+   */
+  static createBacktestWithDataAnalyticsCreateBacktestWithDataPost(requestBody) {
+    return (0, _request.request)(_OpenAPI.OpenAPI, {
+      method: 'POST',
+      url: '/analytics/create-backtest-with-data',
+      body: requestBody,
+      mediaType: 'application/json',
+      errors: {
+        422: `Validation Error`
+      }
     });
   }
 }

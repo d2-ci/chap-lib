@@ -56,13 +56,6 @@ export declare class AnalyticsService {
      */
     static createBacktestAnalyticsCreateBacktestPost(requestBody: MakeBacktestRequest): CancelablePromise<JobResponse>;
     /**
-     * Create Backtest With Data
-     * @param requestBody
-     * @returns JobResponse Successful Response
-     * @throws ApiError
-     */
-    static createBacktestWithDataAnalyticsCreateBacktestWithDataPost(requestBody: MakeBacktestWithDataRequest): CancelablePromise<JobResponse>;
-    /**
      * Make Prediction
      * @param requestBody
      * @returns JobResponse Successful Response
@@ -92,5 +85,12 @@ export declare class AnalyticsService {
      * @throws ApiError
      */
     static getDataSourcesAnalyticsDataSourcesGet(): CancelablePromise<Array<DataSource>>;
+    /**
+     * Create Backtest With Data
+     * @param requestBody
+     * @returns JobResponse Successful Response
+     * @throws ApiError
+     */
+    static createBacktestWithDataAnalyticsCreateBacktestWithDataPost(requestBody: MakeBacktestWithDataRequest): CancelablePromise<JobResponse>;
 }
 //# sourceMappingURL=AnalyticsService.d.ts.map
