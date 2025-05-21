@@ -36,6 +36,24 @@ export class CrudService {
     });
   }
   /**
+   * Delete Backtest Batch
+   * @param ids
+   * @returns any Successful Response
+   * @throws ApiError
+   */
+  static deleteBacktestBatchCrudBacktestsDelete(ids) {
+    return __request(OpenAPI, {
+      method: 'DELETE',
+      url: '/crud/backtests',
+      query: {
+        'ids': ids
+      },
+      errors: {
+        422: `Validation Error`
+      }
+    });
+  }
+  /**
    * Get Backtest
    * @param backtestId
    * @returns BackTestFull Successful Response
@@ -85,23 +103,6 @@ export class CrudService {
       path: {
         'backtestId': backtestId
       },
-      body: requestBody,
-      mediaType: 'application/json',
-      errors: {
-        422: `Validation Error`
-      }
-    });
-  }
-  /**
-   * Batch Delete Backtests
-   * @param requestBody
-   * @returns any Successful Response
-   * @throws ApiError
-   */
-  static batchDeleteBacktestsCrudBacktestsBatchDeletePost(requestBody) {
-    return __request(OpenAPI, {
-      method: 'POST',
-      url: '/crud/backtests/batch-delete',
       body: requestBody,
       mediaType: 'application/json',
       errors: {
