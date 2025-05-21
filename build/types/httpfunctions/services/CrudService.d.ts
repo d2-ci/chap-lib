@@ -1,6 +1,5 @@
 import type { BackTestCreate } from '../models/BackTestCreate';
 import type { BackTestFull } from '../models/BackTestFull';
-import type { BackTestIds } from '../models/BackTestIds';
 import type { BackTestRead } from '../models/BackTestRead';
 import type { BackTestUpdate } from '../models/BackTestUpdate';
 import type { Body_create_dataset_csv_crud_datasets_csvFile_post } from '../models/Body_create_dataset_csv_crud_datasets_csvFile_post';
@@ -34,6 +33,13 @@ export declare class CrudService {
      */
     static createBacktestCrudBacktestsPost(requestBody: BackTestCreate): CancelablePromise<JobResponse>;
     /**
+     * Delete Backtest Batch
+     * @param ids
+     * @returns any Successful Response
+     * @throws ApiError
+     */
+    static deleteBacktestBatchCrudBacktestsDelete(ids: string): CancelablePromise<any>;
+    /**
      * Get Backtest
      * @param backtestId
      * @returns BackTestFull Successful Response
@@ -55,13 +61,6 @@ export declare class CrudService {
      * @throws ApiError
      */
     static updateBacktestCrudBacktestsBacktestIdPatch(backtestId: number, requestBody: BackTestUpdate): CancelablePromise<BackTestRead>;
-    /**
-     * Batch Delete Backtests
-     * @param requestBody
-     * @returns any Successful Response
-     * @throws ApiError
-     */
-    static batchDeleteBacktestsCrudBacktestsBatchDeletePost(requestBody: BackTestIds): CancelablePromise<any>;
     /**
      * Get Predictions
      * @returns NewClass Successful Response
