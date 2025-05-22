@@ -1,9 +1,12 @@
+import type { BacktestDomain } from '../models/BacktestDomain';
+import type { BackTestRead } from '../models/BackTestRead';
 import type { DataList } from '../models/DataList';
 import type { DatasetMakeRequest } from '../models/DatasetMakeRequest';
 import type { DataSource } from '../models/DataSource';
 import type { EvaluationEntry } from '../models/EvaluationEntry';
 import type { JobResponse } from '../models/JobResponse';
 import type { MakeBacktestRequest } from '../models/MakeBacktestRequest';
+import type { MakeBacktestWithDataRequest } from '../models/MakeBacktestWithDataRequest';
 import type { MakePredictionRequest } from '../models/MakePredictionRequest';
 import type { PredictionEntry } from '../models/PredictionEntry';
 import type { CancelablePromise } from '../core/CancelablePromise';
@@ -18,13 +21,33 @@ export declare class AnalyticsService {
      */
     static makeDatasetAnalyticsMakeDatasetPost(requestBody: DatasetMakeRequest): CancelablePromise<JobResponse>;
     /**
+     * Get Compatible Backtests
+     * Return a list of backtests that are compatible for comparison with the given backtest
+     * @param backtestId
+     * @returns BackTestRead Successful Response
+     * @throws ApiError
+     */
+    static getCompatibleBacktestsAnalyticsCompatibleBacktestsBacktestIdGet(backtestId: number): CancelablePromise<Array<BackTestRead>>;
+    /**
+     * Get Backtest Overlap
+     * Return the org units and split periods that are common between two backtests
+     * @param backtestId1
+     * @param backtestId2
+     * @returns BacktestDomain Successful Response
+     * @throws ApiError
+     */
+    static getBacktestOverlapAnalyticsBacktestOverlapBacktestId1BacktestId2Get(backtestId1: number, backtestId2: number): CancelablePromise<BacktestDomain>;
+    /**
      * Get Evaluation Entries
+     * Return quantiles for the forecasts in a backtest. Can optionally be filtered on split period and org units.
      * @param backtestId
      * @param quantiles
+     * @param splitPeriod
+     * @param orgUnits
      * @returns EvaluationEntry Successful Response
      * @throws ApiError
      */
-    static getEvaluationEntriesAnalyticsEvaluationEntryGet(backtestId: number, quantiles: Array<number>): CancelablePromise<Array<EvaluationEntry>>;
+    static getEvaluationEntriesAnalyticsEvaluationEntryGet(backtestId: number, quantiles: Array<number>, splitPeriod?: string, orgUnits?: Array<string>): CancelablePromise<Array<EvaluationEntry>>;
     /**
      * Create Backtest
      * @param requestBody
@@ -49,16 +72,25 @@ export declare class AnalyticsService {
     static getPredictionEntriesAnalyticsPredictionEntryPredictionIdGet(predictionId: number, quantiles: Array<number>): CancelablePromise<Array<PredictionEntry>>;
     /**
      * Get Actual Cases
+     * Return the actual disease cases corresponding to a backtest. Can optionally be filtered on org units.
      * @param backtestId
+     * @param orgUnits
      * @returns DataList Successful Response
      * @throws ApiError
      */
-    static getActualCasesAnalyticsActualCasesBacktestIdGet(backtestId: number): CancelablePromise<DataList>;
+    static getActualCasesAnalyticsActualCasesBacktestIdGet(backtestId: number, orgUnits?: Array<string>): CancelablePromise<DataList>;
     /**
      * Get Data Sources
      * @returns DataSource Successful Response
      * @throws ApiError
      */
     static getDataSourcesAnalyticsDataSourcesGet(): CancelablePromise<Array<DataSource>>;
+    /**
+     * Create Backtest With Data
+     * @param requestBody
+     * @returns JobResponse Successful Response
+     * @throws ApiError
+     */
+    static createBacktestWithDataAnalyticsCreateBacktestWithDataPost(requestBody: MakeBacktestWithDataRequest): CancelablePromise<JobResponse>;
 }
 //# sourceMappingURL=AnalyticsService.d.ts.map

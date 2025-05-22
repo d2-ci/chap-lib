@@ -1,4 +1,8 @@
-export type PredictionInfo = {
+/* generated using openapi-typescript-codegen -- do not edit */
+/* istanbul ignore file */
+/* tslint:disable */
+/* eslint-disable */
+export type NewClass = {
     datasetId: number;
     modelId: string;
     nPeriods: number;
@@ -7,4 +11,4 @@ export type PredictionInfo = {
     metaData?: Record<string, any>;
     id: number;
 };
-//# sourceMappingURL=PredictionInfo.d.ts.map
+
