@@ -18,7 +18,8 @@ const Pill = _ref => {
       [_PillModule.default.default]: variant === 'default',
       [_PillModule.default.destructive]: variant === 'destructive',
       [_PillModule.default.info]: variant === 'info',
-      [_PillModule.default.warning]: variant === 'warning'
+      [_PillModule.default.warning]: variant === 'warning',
+      [_PillModule.default.success]: variant === 'success'
     })
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: _PillModule.default.pill

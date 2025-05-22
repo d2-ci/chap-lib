@@ -11,7 +11,8 @@ export const Pill = _ref => {
       [styles.default]: variant === 'default',
       [styles.destructive]: variant === 'destructive',
       [styles.info]: variant === 'info',
-      [styles.warning]: variant === 'warning'
+      [styles.warning]: variant === 'warning',
+      [styles.success]: variant === 'success'
     })
   }, /*#__PURE__*/React.createElement("div", {
     className: styles.pill

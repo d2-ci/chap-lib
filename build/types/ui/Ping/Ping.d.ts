@@ -1,8 +1,8 @@
 import React from 'react';
-import type { PillVariant } from '../Pill';
-export interface PingProps {
+export type PingVariant = 'default' | 'destructive' | 'info' | 'warning' | 'success';
+export type Props = {
     active?: boolean;
-    variant?: PillVariant;
-}
-export declare const Ping: ({ active, variant }: PingProps) => React.JSX.Element;
+    variant?: PingVariant;
+};
+export declare const Ping: ({ active, variant }: Props) => React.JSX.Element;
 //# sourceMappingURL=Ping.d.ts.map

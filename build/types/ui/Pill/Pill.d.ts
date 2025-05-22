@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-export type PillVariant = 'default' | 'destructive' | 'info' | 'warning';
+export type PillVariant = 'default' | 'destructive' | 'info' | 'warning' | 'success';
 interface PillProps {
     children: ReactNode;
     variant?: PillVariant;
