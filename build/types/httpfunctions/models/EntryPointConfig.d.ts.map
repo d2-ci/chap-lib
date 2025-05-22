@@ -1,0 +1,1 @@
+{"version":3,"file":"EntryPointConfig.d.ts","sourceRoot":"","sources":["../../../../src/httpfunctions/models/EntryPointConfig.ts"],"names":[],"mappings":"AAIA,OAAO,KAAK,EAAE,aAAa,EAAE,MAAM,iBAAiB,CAAC;AACrD,MAAM,MAAM,gBAAgB,GAAG;IAC3B,KAAK,EAAE,aAAa,CAAC;IACrB,OAAO,EAAE,aAAa,CAAC;CAC1B,CAAC"}
