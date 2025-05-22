@@ -33,13 +33,6 @@ export declare class CrudService {
      */
     static createBacktestCrudBacktestsPost(requestBody: BackTestCreate): CancelablePromise<JobResponse>;
     /**
-     * Delete Backtest Batch
-     * @param ids
-     * @returns any Successful Response
-     * @throws ApiError
-     */
-    static deleteBacktestBatchCrudBacktestsDelete(ids: string): CancelablePromise<any>;
-    /**
      * Get Backtest
      * @param backtestId
      * @returns BackTestFull Successful Response
