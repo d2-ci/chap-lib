@@ -1,0 +1,1 @@
+{"version":3,"file":"BackTestCreate.d.ts","sourceRoot":"","sources":["../../../../src/httpfunctions/models/BackTestCreate.ts"],"names":[],"mappings":"AAIA,MAAM,MAAM,cAAc,GAAG;IACzB,SAAS,EAAE,MAAM,CAAC;IAClB,OAAO,EAAE,MAAM,CAAC;IAChB,IAAI,CAAC,EAAE,CAAC,MAAM,GAAG,IAAI,CAAC,CAAC;IACvB,OAAO,CAAC,EAAE,CAAC,MAAM,GAAG,IAAI,CAAC,CAAC;CAC7B,CAAC"}
