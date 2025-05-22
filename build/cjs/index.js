@@ -16,6 +16,7 @@ var _exportNames = {
   PredictionTable: true,
   PredictionMap: true,
   Card: true,
+  OverflowButton: true,
   CrudService: true,
   AnalyticsService: true
 };
@@ -53,6 +54,12 @@ Object.defineProperty(exports, "CrudService", {
   enumerable: true,
   get: function () {
     return _CrudService.CrudService;
+  }
+});
+Object.defineProperty(exports, "OverflowButton", {
+  enumerable: true,
+  get: function () {
+    return _OverflowButton.OverflowButton;
   }
 });
 Object.defineProperty(exports, "PredictionMap", {
@@ -124,5 +131,6 @@ var _ComparionPlotWrapper = require("./components/evaluation/ComparionPlotWrappe
 var _PredictionTable = require("./components/predictions/PredictionTable/PredictionTable");
 var _PredictionMap = require("./components/predictions/PredictionMap/PredictionMap");
 var _Card = require("./ui/Card");
+var _OverflowButton = require("./ui/OverflowButton");
 var _CrudService = require("./httpfunctions/services/CrudService");
 var _AnalyticsService = require("./httpfunctions/services/AnalyticsService");

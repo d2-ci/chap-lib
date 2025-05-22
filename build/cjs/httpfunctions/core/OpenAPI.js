@@ -7,6 +7,7 @@ exports.OpenAPI = void 0;
 /* generated using openapi-typescript-codegen -- do not edit */
 /* istanbul ignore file */
 /* tslint:disable */
+/* eslint-disable */
 
 const OpenAPI = exports.OpenAPI = {
   BASE: '/v1',

@@ -3,5 +3,6 @@
     "Prediction for {{orgUnitName}}": "Prediction for {{orgUnitName}}",
     "Prediction for {{predictionTargetName}} for {{orgUnitName}}": "Prediction for {{predictionTargetName}} for {{orgUnitName}}",
     "Quantile median": "Quantile median",
-    "Range": "Range"
+    "Range": "Range",
+    "More": "More"
 }

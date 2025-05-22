@@ -1,4 +1,4 @@
-export type PredictionInfo = {
+export type NewClass = {
     datasetId: number;
     modelId: string;
     nPeriods: number;
@@ -7,4 +7,4 @@ export type PredictionInfo = {
     metaData?: Record<string, any>;
     id: number;
 };
-//# sourceMappingURL=PredictionInfo.d.ts.map
+//# sourceMappingURL=NewClass.d.ts.map
