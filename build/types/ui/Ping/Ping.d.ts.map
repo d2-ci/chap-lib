@@ -1,0 +1,1 @@
+{"version":3,"file":"Ping.d.ts","sourceRoot":"","sources":["../../../../src/ui/Ping/Ping.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAC;AAG1B,OAAO,KAAK,EAAE,WAAW,EAAE,MAAM,SAAS,CAAC;AAE3C,MAAM,WAAW,SAAS;IACxB,MAAM,CAAC,EAAE,OAAO,CAAC;IACjB,OAAO,CAAC,EAAE,WAAW,CAAC;CACvB;AAED,eAAO,MAAM,IAAI,wBAA6C,SAAS,sBAWtE,CAAC"}

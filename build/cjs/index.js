@@ -15,8 +15,11 @@ var _exportNames = {
   ComparionPlotWrapper: true,
   PredictionTable: true,
   PredictionMap: true,
-  Card: true,
   OverflowButton: true,
+  Ping: true,
+  Pill: true,
+  Card: true,
+  StatusIndicator: true,
   CrudService: true,
   AnalyticsService: true
 };
@@ -29,7 +32,7 @@ Object.defineProperty(exports, "AnalyticsService", {
 Object.defineProperty(exports, "Card", {
   enumerable: true,
   get: function () {
-    return _Card.Card;
+    return _ui.Card;
   }
 });
 Object.defineProperty(exports, "ComparionPlotWrapper", {
@@ -59,7 +62,19 @@ Object.defineProperty(exports, "CrudService", {
 Object.defineProperty(exports, "OverflowButton", {
   enumerable: true,
   get: function () {
-    return _OverflowButton.OverflowButton;
+    return _ui.OverflowButton;
+  }
+});
+Object.defineProperty(exports, "Pill", {
+  enumerable: true,
+  get: function () {
+    return _ui.Pill;
+  }
+});
+Object.defineProperty(exports, "Ping", {
+  enumerable: true,
+  get: function () {
+    return _ui.Ping;
   }
 });
 Object.defineProperty(exports, "PredictionMap", {
@@ -78,6 +93,12 @@ Object.defineProperty(exports, "ResultPlot", {
   enumerable: true,
   get: function () {
     return _ResultPlot.ResultPlot;
+  }
+});
+Object.defineProperty(exports, "StatusIndicator", {
+  enumerable: true,
+  get: function () {
+    return _ui.StatusIndicator;
   }
 });
 Object.defineProperty(exports, "UncertaintyAreaChart", {
@@ -130,7 +151,6 @@ var _ComparisonPlotList = require("./components/evaluation/ComparisonPlotList/Co
 var _ComparionPlotWrapper = require("./components/evaluation/ComparionPlotWrapper/ComparionPlotWrapper");
 var _PredictionTable = require("./components/predictions/PredictionTable/PredictionTable");
 var _PredictionMap = require("./components/predictions/PredictionMap/PredictionMap");
-var _Card = require("./ui/Card");
-var _OverflowButton = require("./ui/OverflowButton");
+var _ui = require("./ui");
 var _CrudService = require("./httpfunctions/services/CrudService");
 var _AnalyticsService = require("./httpfunctions/services/AnalyticsService");
