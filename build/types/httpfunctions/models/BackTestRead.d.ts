@@ -1,3 +1,4 @@
+import type { DataSetMeta } from './DataSetMeta';
 export type BackTestRead = {
     datasetId: number;
     modelId: string;
@@ -6,5 +7,6 @@ export type BackTestRead = {
     id: number;
     orgUnits?: Array<string>;
     splitPeriods?: Array<string>;
+    dataset: DataSetMeta;
 };
 //# sourceMappingURL=BackTestRead.d.ts.map
