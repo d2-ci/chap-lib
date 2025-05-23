@@ -9,11 +9,9 @@ const SplitPeriodSelector = _ref => {
     selectedSplitPeriod,
     ...singleSelectFieldProps
   } = _ref;
-  if (!splitPeriods.includes(selectedSplitPeriod)) {
-    return /*#__PURE__*/React.createElement(React.Fragment, null);
-  }
+  const selectedInAvailable = splitPeriods.includes(selectedSplitPeriod);
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(SingleSelectField, _extends({}, singleSelectFieldProps, {
-    selected: selectedSplitPeriod,
+    selected: selectedInAvailable ? selectedSplitPeriod : undefined,
     onChange: e => setSelectedSplitPeriod(e.selected)
   }), splitPeriods.map((splitPeriod, i) => /*#__PURE__*/React.createElement(SingleSelectOption, {
     key: i,
