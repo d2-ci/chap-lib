@@ -6,7 +6,6 @@ export { ApiError } from './core/ApiError';
 export { CancelablePromise, CancelError } from './core/CancelablePromise';
 export { OpenAPI } from './core/OpenAPI';
 export { PeriodType } from './models/PeriodType';
-export { UserOption } from './models/UserOption';
 export { AnalyticsService } from './services/AnalyticsService';
 export { CrudService } from './services/CrudService';
 export { DebugService } from './services/DebugService';
