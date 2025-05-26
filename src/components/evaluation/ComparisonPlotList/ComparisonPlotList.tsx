@@ -32,7 +32,12 @@ export const ComparisonPlotList: React.FC<ComparisonPlotListProps> = ({
         return (
             <>
                 {evaluationPerOrgUnits.map((orgUnitsData, index) => {
-                    return <ComparisonPlot orgUnitsData={orgUnitsData} />
+                    return (
+                        <ComparisonPlot
+                            orgUnitsData={orgUnitsData}
+                            key={orgUnitsData.orgUnitId}
+                        />
+                    )
                 })}
             </>
         )

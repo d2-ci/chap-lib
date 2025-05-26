@@ -27,7 +27,8 @@ const ComparisonPlotList = _ref => {
   if (!useVirtuoso) {
     return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, evaluationPerOrgUnits.map((orgUnitsData, index) => {
       return /*#__PURE__*/_react.default.createElement(_ComparisonPlot.ComparisonPlot, {
-        orgUnitsData: orgUnitsData
+        orgUnitsData: orgUnitsData,
+        key: orgUnitsData.orgUnitId
       });
     }));
   }
