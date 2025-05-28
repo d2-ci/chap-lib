@@ -75,17 +75,6 @@ export class DefaultService {
     });
   }
   /**
-   * List Model Templates
-   * @returns ModelTemplateConfig Successful Response
-   * @throws ApiError
-   */
-  static listModelTemplatesListModelTemplatesGet() {
-    return __request(OpenAPI, {
-      method: 'GET',
-      url: '/list-model-templates'
-    });
-  }
-  /**
    * List Features
    * List all available features
    * @returns Feature Successful Response

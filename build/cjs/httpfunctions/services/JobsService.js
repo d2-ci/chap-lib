@@ -74,6 +74,25 @@ class JobsService {
     });
   }
   /**
+   * Cancel Job
+   * Cancel a running job
+   * @param jobId
+   * @returns any Successful Response
+   * @throws ApiError
+   */
+  static cancelJobJobsJobIdCancelPost(jobId) {
+    return (0, _request.request)(_OpenAPI.OpenAPI, {
+      method: 'POST',
+      url: '/jobs/{job_id}/cancel',
+      path: {
+        'job_id': jobId
+      },
+      errors: {
+        422: `Validation Error`
+      }
+    });
+  }
+  /**
    * Get Logs
    * @param jobId
    * @returns string Successful Response
