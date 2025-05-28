@@ -2,10 +2,6 @@ import HighchartsReact from 'highcharts-react-official';
 import Highcharts from 'highcharts';
 import React from 'react';
 import { getPeriodNameFromId } from '../../../utils/Time';
-
-//import HighchartsMore from "highcharts/highcharts-more";
-
-//HighchartsMore(Highcharts); // Enables the 'arearange' series type
 function syncChartZoom(event) {
   Highcharts.charts.forEach(chart => {
     if (chart) {
@@ -80,7 +76,7 @@ const getOptions = (data, modelName, syncZoom) => {
       labels: {
         enabled: true,
         formatter: function () {
-          return getPeriodNameFromId(this.value);
+          return getPeriodNameFromId(this.value.toString());
         },
         style: {
           fontSize: '0.9rem'

@@ -1,9 +1,7 @@
 import {
-    Checkbox,
-    SingleSelect,
     SingleSelectField,
     SingleSelectFieldProps,
-    SingleSelectOption,
+    SingleSelectOption
 } from '@dhis2/ui'
 import React from 'react'
 import { getPeriodNameFromId } from '../../../utils/Time'
