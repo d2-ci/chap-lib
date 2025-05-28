@@ -31,6 +31,14 @@ export declare class JobsService {
      */
     static deleteJobJobsJobIdDelete(jobId: string): CancelablePromise<Record<string, any>>;
     /**
+     * Cancel Job
+     * Cancel a running job
+     * @param jobId
+     * @returns any Successful Response
+     * @throws ApiError
+     */
+    static cancelJobJobsJobIdCancelPost(jobId: string): CancelablePromise<Record<string, any>>;
+    /**
      * Get Logs
      * @param jobId
      * @returns string Successful Response

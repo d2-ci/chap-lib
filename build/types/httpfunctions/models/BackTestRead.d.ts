@@ -1,3 +1,4 @@
+import type { ConfiguredModelRead } from './ConfiguredModelRead';
 import type { DataSetMeta } from './DataSetMeta';
 export type BackTestRead = {
     datasetId: number;
@@ -8,5 +9,7 @@ export type BackTestRead = {
     orgUnits?: Array<string>;
     splitPeriods?: Array<string>;
     dataset: DataSetMeta;
+    aggregateMetrics: Record<string, number>;
+    configuredModel: ConfiguredModelRead;
 };
 //# sourceMappingURL=BackTestRead.d.ts.map

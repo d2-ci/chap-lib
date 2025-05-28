@@ -20,6 +20,7 @@ var _exportNames = {
   Pill: true,
   Card: true,
   StatusIndicator: true,
+  SplitPeriodSelector: true,
   CrudService: true,
   AnalyticsService: true
 };
@@ -95,6 +96,12 @@ Object.defineProperty(exports, "ResultPlot", {
     return _ResultPlot.ResultPlot;
   }
 });
+Object.defineProperty(exports, "SplitPeriodSelector", {
+  enumerable: true,
+  get: function () {
+    return _SplitPeriodSelector.default;
+  }
+});
 Object.defineProperty(exports, "StatusIndicator", {
   enumerable: true,
   get: function () {
@@ -152,5 +159,7 @@ var _ComparionPlotWrapper = require("./components/evaluation/ComparionPlotWrappe
 var _PredictionTable = require("./components/predictions/PredictionTable/PredictionTable");
 var _PredictionMap = require("./components/predictions/PredictionMap/PredictionMap");
 var _ui = require("./ui");
+var _SplitPeriodSelector = _interopRequireDefault(require("./components/evaluation/SplitPeriodSelector/SplitPeriodSelector"));
 var _CrudService = require("./httpfunctions/services/CrudService");
 var _AnalyticsService = require("./httpfunctions/services/AnalyticsService");
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
