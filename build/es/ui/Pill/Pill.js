@@ -1,11 +1,10 @@
 import React from 'react';
 import cx from 'classnames';
 import styles from './Pill.module.css';
-export const Pill = _ref => {
-  let {
-    children,
-    variant = 'default'
-  } = _ref;
+export const Pill = ({
+  children,
+  variant = 'default'
+}) => {
   return /*#__PURE__*/React.createElement("span", {
     className: cx(styles.pillWrapper, {
       [styles.default]: variant === 'default',

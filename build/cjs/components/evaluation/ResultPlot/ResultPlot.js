@@ -117,12 +117,11 @@ const getOptions = (data, modelName, syncZoom) => {
     series: getSeries(data)
   };
 };
-const ResultPlot = _ref => {
-  let {
-    data,
-    modelName,
-    syncZoom
-  } = _ref;
+const ResultPlot = ({
+  data,
+  modelName,
+  syncZoom
+}) => {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_highchartsReactOfficial.default, {
     highcharts: _highcharts.default,
     options: getOptions(data, modelName, syncZoom)

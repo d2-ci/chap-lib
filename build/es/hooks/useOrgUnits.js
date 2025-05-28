@@ -4,14 +4,11 @@ import { parseOrgUnits } from '../components/maps/utils';
 const REQUEST = {
   orgUnits: {
     resource: 'geoFeatures.json',
-    params: _ref => {
-      let {
-        orgUnits
-      } = _ref;
-      return {
-        ou: 'ou:' + orgUnits.join(';')
-      };
-    }
+    params: ({
+      orgUnits
+    }) => ({
+      ou: 'ou:' + orgUnits.join(';')
+    })
   }
 };
 const useOrgUnits = orgUnitIds => {

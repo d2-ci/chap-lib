@@ -1,12 +1,11 @@
 import React from 'react';
 import { ComparisonPlot } from '../ComparisonPlot/ComparisonPlot';
 import { Virtuoso } from 'react-virtuoso';
-export const ComparisonPlotList = _ref => {
-  let {
-    evaluationPerOrgUnits,
-    useVirtuoso = true,
-    useVirtuosoWindowScroll = false
-  } = _ref;
+export const ComparisonPlotList = ({
+  evaluationPerOrgUnits,
+  useVirtuoso = true,
+  useVirtuosoWindowScroll = false
+}) => {
   function getItemContent() {
     const ItemContent = index => {
       const orgUnitsData = evaluationPerOrgUnits[index];

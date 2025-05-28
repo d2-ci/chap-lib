@@ -52,8 +52,7 @@ class DefaultService {
    * @returns any Successful Response
    * @throws ApiError
    */
-  static evaluateEvaluatePost(requestBody, nSplits) {
-    let stride = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+  static evaluateEvaluatePost(requestBody, nSplits, stride = 1) {
     return (0, _request.request)(_OpenAPI.OpenAPI, {
       method: 'POST',
       url: '/evaluate',

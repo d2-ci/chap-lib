@@ -9,13 +9,12 @@ var _react = _interopRequireDefault(require("react"));
 var _Time = require("../../../utils/Time");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const SplitPeriodSelector = _ref => {
-  let {
-    splitPeriods,
-    setSelectedSplitPeriod,
-    selectedSplitPeriod,
-    ...singleSelectFieldProps
-  } = _ref;
+const SplitPeriodSelector = ({
+  splitPeriods,
+  setSelectedSplitPeriod,
+  selectedSplitPeriod,
+  ...singleSelectFieldProps
+}) => {
   const selectedInAvailable = splitPeriods.includes(selectedSplitPeriod);
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_ui.SingleSelectField, _extends({}, singleSelectFieldProps, {
     selected: selectedInAvailable ? selectedSplitPeriod : undefined,

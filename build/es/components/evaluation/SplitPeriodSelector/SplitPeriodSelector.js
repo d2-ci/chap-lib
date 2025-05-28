@@ -2,13 +2,12 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 import { SingleSelectField, SingleSelectOption } from '@dhis2/ui';
 import React from 'react';
 import { getPeriodNameFromId } from '../../../utils/Time';
-const SplitPeriodSelector = _ref => {
-  let {
-    splitPeriods,
-    setSelectedSplitPeriod,
-    selectedSplitPeriod,
-    ...singleSelectFieldProps
-  } = _ref;
+const SplitPeriodSelector = ({
+  splitPeriods,
+  setSelectedSplitPeriod,
+  selectedSplitPeriod,
+  ...singleSelectFieldProps
+}) => {
   const selectedInAvailable = splitPeriods.includes(selectedSplitPeriod);
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(SingleSelectField, _extends({}, singleSelectFieldProps, {
     selected: selectedInAvailable ? selectedSplitPeriod : undefined,

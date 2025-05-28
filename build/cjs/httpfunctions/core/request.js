@@ -52,8 +52,7 @@ const getQueryString = params => {
           process(key, v);
         });
       } else if (typeof value === 'object') {
-        Object.entries(value).forEach(_ref => {
-          let [k, v] = _ref;
+        Object.entries(value).forEach(([k, v]) => {
           process(`${key}[${k}]`, v);
         });
       } else {
@@ -61,8 +60,7 @@ const getQueryString = params => {
       }
     }
   };
-  Object.entries(params).forEach(_ref2 => {
-    let [key, value] = _ref2;
+  Object.entries(params).forEach(([key, value]) => {
     process(key, value);
   });
   if (qs.length > 0) {
@@ -96,11 +94,7 @@ const getFormData = options => {
         formData.append(key, JSON.stringify(value));
       }
     };
-    Object.entries(options.formData).filter(_ref3 => {
-      let [_, value] = _ref3;
-      return isDefined(value);
-    }).forEach(_ref4 => {
-      let [key, value] = _ref4;
+    Object.entries(options.formData).filter(([_, value]) => isDefined(value)).forEach(([key, value]) => {
       if (Array.isArray(value)) {
         value.forEach(v => process(key, v));
       } else {
@@ -125,16 +119,10 @@ const getHeaders = async (config, options) => {
     Accept: 'application/json',
     ...additionalHeaders,
     ...options.headers
-  }).filter(_ref5 => {
-    let [_, value] = _ref5;
-    return isDefined(value);
-  }).reduce((headers, _ref6) => {
-    let [key, value] = _ref6;
-    return {
-      ...headers,
-      [key]: String(value)
-    };
-  }, {});
+  }).filter(([_, value]) => isDefined(value)).reduce((headers, [key, value]) => ({
+    ...headers,
+    [key]: String(value)
+  }), {});
   if (isStringWithValue(token)) {
     headers['Authorization'] = `Bearer ${token}`;
   }
