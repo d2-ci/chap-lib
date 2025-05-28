@@ -14,14 +14,27 @@ var _request = require("../core/request");
 class JobsService {
   /**
    * List Jobs
-   * List all jobs currently in the queue
+   * List all jobs currently in the queue.
+   * Optionally filters by a list of job IDs, a list of statuses, and/or a job type.
+   * Filtering order: IDs, then type, then status.
+   * @param ids
+   * @param status
+   * @param type
    * @returns JobDescription Successful Response
    * @throws ApiError
    */
-  static listJobsJobsGet() {
+  static listJobsJobsGet(ids, status, type) {
     return (0, _request.request)(_OpenAPI.OpenAPI, {
       method: 'GET',
-      url: '/jobs'
+      url: '/jobs',
+      query: {
+        'ids': ids,
+        'status': status,
+        'type': type
+      },
+      errors: {
+        422: `Validation Error`
+      }
     });
   }
   /**
