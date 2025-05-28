@@ -76,7 +76,7 @@ const getOptions = (data, modelName, syncZoom) => {
       labels: {
         enabled: true,
         formatter: function () {
-          return getPeriodNameFromId(this.value);
+          return getPeriodNameFromId(this.value.toString());
         },
         style: {
           fontSize: '0.9rem'
