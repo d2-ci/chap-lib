@@ -6,9 +6,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.ResultPlot = void 0;
 var _highchartsReactOfficial = _interopRequireDefault(require("highcharts-react-official"));
 var _highcharts = _interopRequireDefault(require("highcharts"));
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 var _Time = require("../../../utils/Time");
-function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function (e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (const t in e) "default" !== t && {}.hasOwnProperty.call(e, t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, t)) && (i.get || i.set) ? o(f, t, i) : f[t] = e[t]); return f; })(e, t); }
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 function syncChartZoom(event) {
   _highcharts.default.charts.forEach(chart => {
@@ -84,7 +83,7 @@ const getOptions = (data, modelName, syncZoom) => {
       labels: {
         enabled: true,
         formatter: function () {
-          return (0, _Time.getPeriodNameFromId)(this.value);
+          return (0, _Time.getPeriodNameFromId)(this.value.toString());
         },
         style: {
           fontSize: '0.9rem'
@@ -123,16 +122,7 @@ const ResultPlot = ({
   modelName,
   syncZoom
 }) => {
-  const [isRerendering, setIsRerendering] = (0, _react.useState)(false);
-  (0, _react.useEffect)(() => {
-    setIsRerendering(true);
-  }, [data]);
-  (0, _react.useEffect)(() => {
-    if (isRerendering) {
-      setIsRerendering(false);
-    }
-  }, [isRerendering]);
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, !isRerendering && /*#__PURE__*/_react.default.createElement(_highchartsReactOfficial.default, {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_highchartsReactOfficial.default, {
     highcharts: _highcharts.default,
     options: getOptions(data, modelName, syncZoom)
   }));

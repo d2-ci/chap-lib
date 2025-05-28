@@ -8,6 +8,7 @@ export { ComparionPlotWrapper } from './components/evaluation/ComparionPlotWrapp
 export { PredictionTable } from './components/predictions/PredictionTable/PredictionTable';
 export { PredictionMap } from './components/predictions/PredictionMap/PredictionMap';
 export { OverflowButton, Ping, Pill, Card, StatusIndicator } from './ui';
+export { default as SplitPeriodSelector } from './components/evaluation/SplitPeriodSelector/SplitPeriodSelector';
 
 //interfaces
 

@@ -1,6 +1,6 @@
 import HighchartsReact from 'highcharts-react-official';
 import Highcharts from 'highcharts';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { getPeriodNameFromId } from '../../../utils/Time';
 function syncChartZoom(event) {
   Highcharts.charts.forEach(chart => {
@@ -76,7 +76,7 @@ const getOptions = (data, modelName, syncZoom) => {
       labels: {
         enabled: true,
         formatter: function () {
-          return getPeriodNameFromId(this.value);
+          return getPeriodNameFromId(this.value.toString());
         },
         style: {
           fontSize: '0.9rem'
@@ -115,16 +115,7 @@ export const ResultPlot = ({
   modelName,
   syncZoom
 }) => {
-  const [isRerendering, setIsRerendering] = useState(false);
-  useEffect(() => {
-    setIsRerendering(true);
-  }, [data]);
-  useEffect(() => {
-    if (isRerendering) {
-      setIsRerendering(false);
-    }
-  }, [isRerendering]);
-  return /*#__PURE__*/React.createElement(React.Fragment, null, !isRerendering && /*#__PURE__*/React.createElement(HighchartsReact, {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(HighchartsReact, {
     highcharts: Highcharts,
     options: getOptions(data, modelName, syncZoom)
   }));

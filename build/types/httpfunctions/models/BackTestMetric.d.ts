@@ -3,6 +3,7 @@ export type BackTestMetric = {
     backtestId: number;
     metricId: string;
     period: string;
+    orgUnit: string;
     lastTrainPeriod: string;
     lastSeenPeriod: string;
     value: number;

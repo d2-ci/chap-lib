@@ -10,6 +10,7 @@ export { PredictionTable } from './components/predictions/PredictionTable/Predic
 export { PredictionMap } from './components/predictions/PredictionMap/PredictionMap';
 export { OverflowButton, Ping, Pill, Card, StatusIndicator, } from './ui';
 export type { PillVariant, } from './ui/Pill';
+export { default as SplitPeriodSelector } from './components/evaluation/SplitPeriodSelector/SplitPeriodSelector';
 export type { FullPredictionResponseExtended, PredictionResponseExtended, } from './interfaces/Prediction';
 export { CrudService } from './httpfunctions/services/CrudService';
 export { AnalyticsService } from './httpfunctions/services/AnalyticsService';
