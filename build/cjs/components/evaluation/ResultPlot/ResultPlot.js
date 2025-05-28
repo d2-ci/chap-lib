@@ -9,9 +9,6 @@ var _highcharts = _interopRequireDefault(require("highcharts"));
 var _react = _interopRequireDefault(require("react"));
 var _Time = require("../../../utils/Time");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-//import HighchartsMore from "highcharts/highcharts-more";
-
-//HighchartsMore(Highcharts); // Enables the 'arearange' series type
 function syncChartZoom(event) {
   _highcharts.default.charts.forEach(chart => {
     if (chart) {

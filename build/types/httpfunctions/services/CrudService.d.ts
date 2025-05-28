@@ -123,6 +123,13 @@ export declare class CrudService {
      */
     static listModelsCrudModelsGet(): CancelablePromise<Array<ModelSpecRead>>;
     /**
+     * List Models V2
+     * List all configured models from the db (new db tables)
+     * @returns ModelSpecRead Successful Response
+     * @throws ApiError
+     */
+    static listModelsV2CrudModelsV2Get(): CancelablePromise<Array<ModelSpecRead>>;
+    /**
      * Debug Entry
      * @returns JobResponse Successful Response
      * @throws ApiError

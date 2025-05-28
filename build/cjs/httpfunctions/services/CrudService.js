@@ -256,6 +256,18 @@ class CrudService {
     });
   }
   /**
+   * List Models V2
+   * List all configured models from the db (new db tables)
+   * @returns ModelSpecRead Successful Response
+   * @throws ApiError
+   */
+  static listModelsV2CrudModelsV2Get() {
+    return (0, _request.request)(_OpenAPI.OpenAPI, {
+      method: 'GET',
+      url: '/crud/models-v2'
+    });
+  }
+  /**
    * Debug Entry
    * @returns JobResponse Successful Response
    * @throws ApiError
