@@ -1,0 +1,1 @@
+{"version":3,"file":"FeatureCollectionModel.d.ts","sourceRoot":"","sources":["../../../../src/httpfunctions/models/FeatureCollectionModel.ts"],"names":[],"mappings":"AAIA,OAAO,KAAK,EAAE,YAAY,EAAE,MAAM,gBAAgB,CAAC;AACnD,MAAM,MAAM,sBAAsB,GAAG;IACjC,IAAI,CAAC,EAAE,MAAM,CAAC;IACd,QAAQ,EAAE,KAAK,CAAC,YAAY,CAAC,CAAC;CACjC,CAAC"}
