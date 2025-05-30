@@ -1,5 +1,4 @@
-export const getEqualIntervals = function (minValue, maxValue) {
-  let numClasses = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 5;
+export const getEqualIntervals = (minValue, maxValue, numClasses = 5) => {
   const bins = [];
   const binSize = (maxValue - minValue) / numClasses;
   for (let i = 0; i < numClasses; i++) {

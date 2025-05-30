@@ -1,20 +1,19 @@
 import React, { useRef, useState } from 'react';
 import i18n from '@dhis2/d2-i18n';
 import { Button, Layer, Popper } from '@dhis2/ui';
-export const OverflowButton = _ref => {
-  let {
-    label,
-    primary,
-    secondary,
-    small,
-    large,
-    disabled,
-    onClick: handleClick,
-    open: propsOpen,
-    icon,
-    dataTest,
-    component
-  } = _ref;
+export const OverflowButton = ({
+  label,
+  primary,
+  secondary,
+  small,
+  large,
+  disabled,
+  onClick: handleClick,
+  open: propsOpen,
+  icon,
+  dataTest,
+  component
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const anchorRef = useRef(null);
   const open = propsOpen !== undefined ? propsOpen : isOpen;

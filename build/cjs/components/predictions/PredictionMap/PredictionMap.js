@@ -17,11 +17,10 @@ var _PredictionMapModule = _interopRequireDefault(require("./PredictionMap.modul
 var _multiCalendarDates = require("@dhis2/multi-calendar-dates");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 const colors = ['#FFFFD4', '#FED98E', '#FE9929', '#D95F0E', '#993404'];
-const PredictionMap = _ref => {
-  let {
-    data,
-    predictionTargetName
-  } = _ref;
+const PredictionMap = ({
+  data,
+  predictionTargetName
+}) => {
   // get all orgunits
   const orgUnitIds = (0, _PredictionResponse.getUniqeOrgUnits)(data.dataValues);
 

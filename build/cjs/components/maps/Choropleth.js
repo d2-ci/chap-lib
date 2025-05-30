@@ -6,15 +6,14 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _react = require("react");
 var _MapItem = require("./MapItem");
-const Choropleth = _ref => {
-  let {
-    period,
-    prediction,
-    geojson,
-    dataElement = 'median',
-    bins,
-    colors
-  } = _ref;
+const Choropleth = ({
+  period,
+  prediction,
+  geojson,
+  dataElement = 'median',
+  bins,
+  colors
+}) => {
   const map = (0, _react.useContext)(_MapItem.MapContext);
   (0, _react.useEffect)(() => {
     if (geojson.hasOwnProperty('features')) {

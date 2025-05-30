@@ -9,12 +9,11 @@ var _Pill = require("../Pill");
 var _Ping = require("../Ping");
 var _StatusIndicatorModule = _interopRequireDefault(require("./StatusIndicator.module.css"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-const StatusIndicator = _ref => {
-  let {
-    label,
-    variant = 'default',
-    active = false
-  } = _ref;
+const StatusIndicator = ({
+  label,
+  variant = 'default',
+  active = false
+}) => {
   return /*#__PURE__*/_react.default.createElement(_Pill.Pill, {
     variant: variant
   }, /*#__PURE__*/_react.default.createElement("div", {
