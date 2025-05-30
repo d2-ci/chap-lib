@@ -4,6 +4,7 @@ import type { DataList } from '../models/DataList';
 import type { DatasetMakeRequest } from '../models/DatasetMakeRequest';
 import type { DataSource } from '../models/DataSource';
 import type { EvaluationEntry } from '../models/EvaluationEntry';
+import type { ImportSummaryResponse } from '../models/ImportSummaryResponse';
 import type { JobResponse } from '../models/JobResponse';
 import type { MakeBacktestRequest } from '../models/MakeBacktestRequest';
 import type { MakeBacktestWithDataRequest } from '../models/MakeBacktestWithDataRequest';
@@ -16,10 +17,10 @@ export declare class AnalyticsService {
      * This endpoint creates a dataset from the provided data and the data to be fetched3
      * and puts it in the database
      * @param requestBody
-     * @returns JobResponse Successful Response
+     * @returns ImportSummaryResponse Successful Response
      * @throws ApiError
      */
-    static makeDatasetAnalyticsMakeDatasetPost(requestBody: DatasetMakeRequest): CancelablePromise<JobResponse>;
+    static makeDatasetAnalyticsMakeDatasetPost(requestBody: DatasetMakeRequest): CancelablePromise<ImportSummaryResponse>;
     /**
      * Get Compatible Backtests
      * Return a list of backtests that are compatible for comparison with the given backtest
