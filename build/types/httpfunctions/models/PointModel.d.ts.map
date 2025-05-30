@@ -1,0 +1,1 @@
+{"version":3,"file":"PointModel.d.ts","sourceRoot":"","sources":["../../../../src/httpfunctions/models/PointModel.ts"],"names":[],"mappings":"AAIA,OAAO,KAAK,EAAE,WAAW,EAAE,MAAM,eAAe,CAAC;AACjD,MAAM,MAAM,UAAU,GAAG;IACrB,IAAI,CAAC,EAAE,MAAM,CAAC;IACd,WAAW,EAAE,WAAW,CAAC;CAC5B,CAAC"}
