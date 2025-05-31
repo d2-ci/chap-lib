@@ -10,10 +10,9 @@ var _react = _interopRequireDefault(require("react"));
 var _PredictionResponse = require("../../../utils/PredictionResponse");
 var _multiCalendarDates = require("@dhis2/multi-calendar-dates");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-const PredictionTable = _ref => {
-  let {
-    data
-  } = _ref;
+const PredictionTable = ({
+  data
+}) => {
   const dataValues = data.dataValues;
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, (0, _PredictionResponse.getUniqeOrgUnits)(dataValues).map(ou => {
     return /*#__PURE__*/_react.default.createElement("div", {

@@ -8,10 +8,9 @@ var _react = _interopRequireDefault(require("react"));
 var _ComparisonPlotModule = _interopRequireDefault(require("./ComparisonPlot.module.css"));
 var _ResultPlot = require("../ResultPlot/ResultPlot");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-const ComparisonPlot = _ref => {
-  let {
-    orgUnitsData
-  } = _ref;
+const ComparisonPlot = ({
+  orgUnitsData
+}) => {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: _ComparisonPlotModule.default.comparionBox
   }, /*#__PURE__*/_react.default.createElement("div", {

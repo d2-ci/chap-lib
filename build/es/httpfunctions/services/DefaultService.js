@@ -46,8 +46,7 @@ export class DefaultService {
    * @returns any Successful Response
    * @throws ApiError
    */
-  static evaluateEvaluatePost(requestBody, nSplits) {
-    let stride = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+  static evaluateEvaluatePost(requestBody, nSplits, stride = 1) {
     return __request(OpenAPI, {
       method: 'POST',
       url: '/evaluate',
@@ -72,17 +71,6 @@ export class DefaultService {
     return __request(OpenAPI, {
       method: 'GET',
       url: '/list-models'
-    });
-  }
-  /**
-   * List Model Templates
-   * @returns ModelTemplateConfig Successful Response
-   * @throws ApiError
-   */
-  static listModelTemplatesListModelTemplatesGet() {
-    return __request(OpenAPI, {
-      method: 'GET',
-      url: '/list-model-templates'
     });
   }
   /**

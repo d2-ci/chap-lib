@@ -3,10 +3,9 @@ import styles from './PredictionTable.module.css';
 import React from 'react';
 import { getUniqeOrgUnits, findOrgUnitName, getUniqePeriods, getUniqeQuantiles } from '../../../utils/PredictionResponse';
 import { createFixedPeriodFromPeriodId } from '@dhis2/multi-calendar-dates';
-export const PredictionTable = _ref => {
-  let {
-    data
-  } = _ref;
+export const PredictionTable = ({
+  data
+}) => {
   const dataValues = data.dataValues;
   return /*#__PURE__*/React.createElement(React.Fragment, null, getUniqeOrgUnits(dataValues).map(ou => {
     return /*#__PURE__*/React.createElement("div", {

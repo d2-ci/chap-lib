@@ -14,24 +14,21 @@ const ConditionalTooltip = props => {
     children,
     ...passOnProps
   } = props;
-  return enabled ? /*#__PURE__*/_react.default.createElement(_ui.Tooltip, passOnProps, _ref => {
-    let {
-      onMouseOver,
-      onMouseOut,
-      ref
-    } = _ref;
-    return /*#__PURE__*/_react.default.createElement("span", {
-      className: wrapperClassName,
-      ref: btnRef => {
-        if (btnRef) {
-          // @ts-expect-error - pointer events are not supported in older browsers
-          btnRef.onpointerenter = onMouseOver;
-          // @ts-expect-error - pointer events are not supported in older browsers
-          btnRef.onpointerleave = onMouseOut;
-          ref.current = btnRef;
-        }
+  return enabled ? /*#__PURE__*/_react.default.createElement(_ui.Tooltip, passOnProps, ({
+    onMouseOver,
+    onMouseOut,
+    ref
+  }) => /*#__PURE__*/_react.default.createElement("span", {
+    className: wrapperClassName,
+    ref: btnRef => {
+      if (btnRef) {
+        // @ts-expect-error - pointer events are not supported in older browsers
+        btnRef.onpointerenter = onMouseOver;
+        // @ts-expect-error - pointer events are not supported in older browsers
+        btnRef.onpointerleave = onMouseOut;
+        ref.current = btnRef;
       }
-    }, children);
-  }) : children;
+    }
+  }, children)) : children;
 };
 exports.ConditionalTooltip = ConditionalTooltip;

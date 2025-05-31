@@ -17,7 +17,7 @@ class AnalyticsService {
    * This endpoint creates a dataset from the provided data and the data to be fetched3
    * and puts it in the database
    * @param requestBody
-   * @returns JobResponse Successful Response
+   * @returns ImportSummaryResponse Successful Response
    * @throws ApiError
    */
   static makeDatasetAnalyticsMakeDatasetPost(requestBody) {

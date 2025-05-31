@@ -8,11 +8,10 @@ var _react = _interopRequireDefault(require("react"));
 var _classnames = _interopRequireDefault(require("classnames"));
 var _PillModule = _interopRequireDefault(require("./Pill.module.css"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-const Pill = _ref => {
-  let {
-    children,
-    variant = 'default'
-  } = _ref;
+const Pill = ({
+  children,
+  variant = 'default'
+}) => {
   return /*#__PURE__*/_react.default.createElement("span", {
     className: (0, _classnames.default)(_PillModule.default.pillWrapper, {
       [_PillModule.default.default]: variant === 'default',

@@ -1,10 +1,9 @@
 import React from 'react';
 import styles from './ComparisonPlot.module.css';
 import { ResultPlot } from '../ResultPlot/ResultPlot';
-export const ComparisonPlot = _ref => {
-  let {
-    orgUnitsData
-  } = _ref;
+export const ComparisonPlot = ({
+  orgUnitsData
+}) => {
   return /*#__PURE__*/React.createElement("div", {
     className: styles.comparionBox
   }, /*#__PURE__*/React.createElement("div", {

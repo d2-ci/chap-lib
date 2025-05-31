@@ -81,11 +81,10 @@ function groupByOrgUnit(data) {
   const orgUnits = [...new Set(data.map(item => item.orgUnit))];
   return orgUnits.map(orgUnit => data.filter(item => item.orgUnit === orgUnit));
 }
-export const UncertaintyAreaChart = _ref => {
-  let {
-    data,
-    predictionTargetName
-  } = _ref;
+export const UncertaintyAreaChart = ({
+  data,
+  predictionTargetName
+}) => {
   const matrix = groupByOrgUnit(data.dataValues);
   const [options, setOptions] = useState(getChartOptions(matrix[0], predictionTargetName));
   const [indexOfSelectedOrgUnit, setIndexOfSelectedOrgUnit] = useState(0);

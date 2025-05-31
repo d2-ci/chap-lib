@@ -3,11 +3,10 @@ import { createContext, useState, useRef, useEffect } from 'react';
 import MapApi from '@dhis2/maps-gl';
 import styles from './MapItem.module.css';
 export const MapContext = /*#__PURE__*/createContext(null);
-const MapItem = _ref => {
-  let {
-    syncId,
-    children
-  } = _ref;
+const MapItem = ({
+  syncId,
+  children
+}) => {
   const [map, setMap] = useState(null);
   const mapEl = useRef(null);
   useEffect(() => {

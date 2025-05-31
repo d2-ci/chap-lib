@@ -15,6 +15,12 @@ Object.defineProperty(exports, "ApiError", {
     return _ApiError.ApiError;
   }
 });
+Object.defineProperty(exports, "AuthorAssessedStatus", {
+  enumerable: true,
+  get: function () {
+    return _AuthorAssessedStatus.AuthorAssessedStatus;
+  }
+});
 Object.defineProperty(exports, "CancelError", {
   enumerable: true,
   get: function () {
@@ -66,6 +72,7 @@ Object.defineProperty(exports, "PeriodType", {
 var _ApiError = require("./core/ApiError");
 var _CancelablePromise = require("./core/CancelablePromise");
 var _OpenAPI = require("./core/OpenAPI");
+var _AuthorAssessedStatus = require("./models/AuthorAssessedStatus");
 var _PeriodType = require("./models/PeriodType");
 var _AnalyticsService = require("./services/AnalyticsService");
 var _CrudService = require("./services/CrudService");

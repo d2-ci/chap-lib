@@ -1,1 +1,1 @@
-{"version":3,"file":"Choropleth.d.ts","sourceRoot":"","sources":["../../../../src/components/maps/Choropleth.tsx"],"names":[],"mappings":"AAGA,QAAA,MAAM,UAAU,gEAOb,GAAG,SA4CL,CAAA;AAED,eAAe,UAAU,CAAA"}
+{"version":3,"file":"Choropleth.d.ts","sourceRoot":"","sources":["../../../../src/components/maps/Choropleth.tsx"],"names":[],"mappings":"AAGA,QAAA,MAAM,UAAU,GAAI,6DAOjB,GAAG,SA4CL,CAAA;AAED,eAAe,UAAU,CAAA"}

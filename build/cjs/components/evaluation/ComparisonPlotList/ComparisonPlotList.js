@@ -8,12 +8,11 @@ var _react = _interopRequireDefault(require("react"));
 var _ComparisonPlot = require("../ComparisonPlot/ComparisonPlot");
 var _reactVirtuoso = require("react-virtuoso");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-const ComparisonPlotList = _ref => {
-  let {
-    evaluationPerOrgUnits,
-    useVirtuoso = true,
-    useVirtuosoWindowScroll = false
-  } = _ref;
+const ComparisonPlotList = ({
+  evaluationPerOrgUnits,
+  useVirtuoso = true,
+  useVirtuosoWindowScroll = false
+}) => {
   function getItemContent() {
     const ItemContent = index => {
       const orgUnitsData = evaluationPerOrgUnits[index];

@@ -1,8 +1,11 @@
+import type { AuthorAssessedStatus } from './AuthorAssessedStatus';
 import type { FeatureType } from './FeatureType';
 import type { PeriodType } from './PeriodType';
 export type ModelSpecRead = {
     displayName?: string;
     description?: string;
+    authorNote?: string;
+    authorAssessedStatus?: AuthorAssessedStatus;
     author?: string;
     organization?: (string | null);
     organizationLogoUrl?: (string | null);

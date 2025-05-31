@@ -8,11 +8,10 @@ var _react = _interopRequireDefault(require("react"));
 var _classnames = _interopRequireDefault(require("classnames"));
 var _PingModule = _interopRequireDefault(require("./Ping.module.css"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-const Ping = _ref => {
-  let {
-    active = false,
-    variant = 'default'
-  } = _ref;
+const Ping = ({
+  active = false,
+  variant = 'default'
+}) => {
   return /*#__PURE__*/_react.default.createElement("span", {
     className: _PingModule.default.wrapper
   }, /*#__PURE__*/_react.default.createElement("span", {

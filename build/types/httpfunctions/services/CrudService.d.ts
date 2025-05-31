@@ -4,15 +4,15 @@ import type { BackTestRead } from '../models/BackTestRead';
 import type { BackTestUpdate } from '../models/BackTestUpdate';
 import type { Body_create_dataset_csv_crud_datasets_csvFile_post } from '../models/Body_create_dataset_csv_crud_datasets_csvFile_post';
 import type { ConfiguredModelDB } from '../models/ConfiguredModelDB';
-import type { ConfiguredModelDBCreate } from '../models/ConfiguredModelDBCreate';
 import type { DataBaseResponse } from '../models/DataBaseResponse';
 import type { DatasetCreate } from '../models/DatasetCreate';
 import type { DataSetRead } from '../models/DataSetRead';
 import type { DataSetWithObservations } from '../models/DataSetWithObservations';
 import type { DebugEntry } from '../models/DebugEntry';
-import type { FeatureSource } from '../models/FeatureSource';
 import type { JobResponse } from '../models/JobResponse';
+import type { ModelConfigurationCreate } from '../models/ModelConfigurationCreate';
 import type { ModelSpecRead } from '../models/ModelSpecRead';
+import type { ModelTemplateRead } from '../models/ModelTemplateRead';
 import type { NewClass } from '../models/NewClass';
 import type { PredictionCreate } from '../models/PredictionCreate';
 import type { PredictionRead } from '../models/PredictionRead';
@@ -32,6 +32,13 @@ export declare class CrudService {
      * @throws ApiError
      */
     static createBacktestCrudBacktestsPost(requestBody: BackTestCreate): CancelablePromise<JobResponse>;
+    /**
+     * Delete Backtest Batch
+     * @param ids
+     * @returns any Successful Response
+     * @throws ApiError
+     */
+    static deleteBacktestBatchCrudBacktestsDelete(ids: string): CancelablePromise<any>;
     /**
      * Get Backtest
      * @param backtestId
@@ -116,18 +123,42 @@ export declare class CrudService {
      */
     static createDatasetCsvCrudDatasetsCsvFilePost(formData: Body_create_dataset_csv_crud_datasets_csvFile_post): CancelablePromise<DataBaseResponse>;
     /**
+     * List Model Templates
+     * Lists all model templates from the db.
+     * @returns ModelTemplateRead Successful Response
+     * @throws ApiError
+     */
+    static listModelTemplatesCrudModelTemplatesGet(): CancelablePromise<Array<ModelTemplateRead>>;
+    /**
+     * List Configured Models
+     * List all configured models from the db
+     * @returns ModelSpecRead Successful Response
+     * @throws ApiError
+     */
+    static listConfiguredModelsCrudConfiguredModelsGet(): CancelablePromise<Array<ModelSpecRead>>;
+    /**
+     * Add Configured Model
+     * Add a configured model to the database
+     * @param requestBody
+     * @returns ConfiguredModelDB Successful Response
+     * @throws ApiError
+     */
+    static addConfiguredModelCrudConfiguredModelsPost(requestBody: ModelConfigurationCreate): CancelablePromise<ConfiguredModelDB>;
+    /**
      * List Models
+     * List all models from the db (alias for configured models)
      * @returns ModelSpecRead Successful Response
      * @throws ApiError
      */
     static listModelsCrudModelsGet(): CancelablePromise<Array<ModelSpecRead>>;
     /**
-     * List Models V2
-     * List all configured models from the db (new db tables)
-     * @returns ModelSpecRead Successful Response
+     * Add Model
+     * Add a model to the database (alias for configured models)
+     * @param requestBody
+     * @returns ConfiguredModelDB Successful Response
      * @throws ApiError
      */
-    static listModelsV2CrudModelsV2Get(): CancelablePromise<Array<ModelSpecRead>>;
+    static addModelCrudModelsPost(requestBody: ModelConfigurationCreate): CancelablePromise<ConfiguredModelDB>;
     /**
      * Debug Entry
      * @returns JobResponse Successful Response
@@ -141,19 +172,5 @@ export declare class CrudService {
      * @throws ApiError
      */
     static getDebugEntryCrudDebugDebugIdGet(debugId: number): CancelablePromise<DebugEntry>;
-    /**
-     * List Feature Types
-     * @returns FeatureSource Successful Response
-     * @throws ApiError
-     */
-    static listFeatureTypesCrudFeatureSourcesGet(): CancelablePromise<Array<FeatureSource>>;
-    /**
-     * Add Configured Model
-     * Add a configured model to the database.
-     * @param requestBody
-     * @returns ConfiguredModelDB Successful Response
-     * @throws ApiError
-     */
-    static addConfiguredModelCrudconfiguredModelPost(requestBody: ConfiguredModelDBCreate): CancelablePromise<ConfiguredModelDB>;
 }
 //# sourceMappingURL=CrudService.d.ts.map
