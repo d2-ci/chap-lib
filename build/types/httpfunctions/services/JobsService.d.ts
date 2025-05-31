@@ -6,11 +6,16 @@ import type { CancelablePromise } from '../core/CancelablePromise';
 export declare class JobsService {
     /**
      * List Jobs
-     * List all jobs currently in the queue
+     * List all jobs currently in the queue.
+     * Optionally filters by a list of job IDs, a list of statuses, and/or a job type.
+     * Filtering order: IDs, then type, then status.
+     * @param ids
+     * @param status
+     * @param type
      * @returns JobDescription Successful Response
      * @throws ApiError
      */
-    static listJobsJobsGet(): CancelablePromise<Array<JobDescription>>;
+    static listJobsJobsGet(ids?: Array<string>, status?: Array<string>, type?: string): CancelablePromise<Array<JobDescription>>;
     /**
      * Get Job Status
      * @param jobId
@@ -25,6 +30,14 @@ export declare class JobsService {
      * @throws ApiError
      */
     static deleteJobJobsJobIdDelete(jobId: string): CancelablePromise<Record<string, any>>;
+    /**
+     * Cancel Job
+     * Cancel a running job
+     * @param jobId
+     * @returns any Successful Response
+     * @throws ApiError
+     */
+    static cancelJobJobsJobIdCancelPost(jobId: string): CancelablePromise<Record<string, any>>;
     /**
      * Get Logs
      * @param jobId

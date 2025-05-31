@@ -3,14 +3,13 @@ import { ComparisonPlotList } from '../ComparisonPlotList/ComparisonPlotList';
 import { Checkbox, InputField } from '@dhis2/ui';
 import SplitPeriodSelector from '../SplitPeriodSelector/SplitPeriodSelector';
 import styles from './ComparionPlotWrapper.module.css';
-export const ComparionPlotWrapper = _ref => {
+export const ComparionPlotWrapper = ({
+  evaluationName,
+  modelName,
+  evaluations,
+  splitPeriods
+}) => {
   var _allOrgUnits$;
-  let {
-    evaluationName,
-    modelName,
-    evaluations,
-    splitPeriods
-  } = _ref;
   const [filteredEvaluationPlots, setFilteredEvaluationPlots] = useState([]);
   const [searchQuery, setSearchQuery] = useState();
   const [selectedOrgUnits, setSelectedOrgUnits] = useState([]);
@@ -60,7 +59,7 @@ export const ComparionPlotWrapper = _ref => {
     className: styles.filterTitle
   }, "Organization units:"), /*#__PURE__*/React.createElement("div", {
     className: styles.filterCheckbox
-  }, allOrgUnits.map((orgUnit, i) => /*#__PURE__*/React.createElement(Checkbox, {
+  }, allOrgUnits.map(orgUnit => /*#__PURE__*/React.createElement(Checkbox, {
     checked: selectedOrgUnits.filter(o => o == orgUnit.id).length > 0,
     onChange: onChangeOrgUnitSelected,
     label: orgUnit.name,

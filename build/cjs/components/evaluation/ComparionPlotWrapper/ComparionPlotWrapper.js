@@ -10,16 +10,14 @@ var _ui = require("@dhis2/ui");
 var _SplitPeriodSelector = _interopRequireDefault(require("../SplitPeriodSelector/SplitPeriodSelector"));
 var _ComparionPlotWrapperModule = _interopRequireDefault(require("./ComparionPlotWrapper.module.css"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function (e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
-const ComparionPlotWrapper = _ref => {
+function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function (e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (const t in e) "default" !== t && {}.hasOwnProperty.call(e, t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, t)) && (i.get || i.set) ? o(f, t, i) : f[t] = e[t]); return f; })(e, t); }
+const ComparionPlotWrapper = ({
+  evaluationName,
+  modelName,
+  evaluations,
+  splitPeriods
+}) => {
   var _allOrgUnits$;
-  let {
-    evaluationName,
-    modelName,
-    evaluations,
-    splitPeriods
-  } = _ref;
   const [filteredEvaluationPlots, setFilteredEvaluationPlots] = (0, _react.useState)([]);
   const [searchQuery, setSearchQuery] = (0, _react.useState)();
   const [selectedOrgUnits, setSelectedOrgUnits] = (0, _react.useState)([]);
@@ -69,7 +67,7 @@ const ComparionPlotWrapper = _ref => {
     className: _ComparionPlotWrapperModule.default.filterTitle
   }, "Organization units:"), /*#__PURE__*/_react.default.createElement("div", {
     className: _ComparionPlotWrapperModule.default.filterCheckbox
-  }, allOrgUnits.map((orgUnit, i) => /*#__PURE__*/_react.default.createElement(_ui.Checkbox, {
+  }, allOrgUnits.map(orgUnit => /*#__PURE__*/_react.default.createElement(_ui.Checkbox, {
     checked: selectedOrgUnits.filter(o => o == orgUnit.id).length > 0,
     onChange: onChangeOrgUnitSelected,
     label: orgUnit.name,

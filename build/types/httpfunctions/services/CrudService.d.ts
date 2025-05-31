@@ -1,23 +1,26 @@
 import type { BackTestCreate } from '../models/BackTestCreate';
 import type { BackTestFull } from '../models/BackTestFull';
 import type { BackTestRead } from '../models/BackTestRead';
+import type { BackTestUpdate } from '../models/BackTestUpdate';
 import type { Body_create_dataset_csv_crud_datasets_csvFile_post } from '../models/Body_create_dataset_csv_crud_datasets_csvFile_post';
+import type { ConfiguredModelDB } from '../models/ConfiguredModelDB';
 import type { DataBaseResponse } from '../models/DataBaseResponse';
 import type { DatasetCreate } from '../models/DatasetCreate';
 import type { DataSetRead } from '../models/DataSetRead';
 import type { DataSetWithObservations } from '../models/DataSetWithObservations';
 import type { DebugEntry } from '../models/DebugEntry';
-import type { FeatureSource } from '../models/FeatureSource';
 import type { JobResponse } from '../models/JobResponse';
+import type { ModelConfigurationCreate } from '../models/ModelConfigurationCreate';
 import type { ModelSpecRead } from '../models/ModelSpecRead';
-import type { ModelTemplateConfig } from '../models/ModelTemplateConfig';
+import type { ModelTemplateRead } from '../models/ModelTemplateRead';
+import type { NewClass } from '../models/NewClass';
 import type { PredictionCreate } from '../models/PredictionCreate';
-import type { PredictionInfo } from '../models/PredictionInfo';
 import type { PredictionRead } from '../models/PredictionRead';
 import type { CancelablePromise } from '../core/CancelablePromise';
 export declare class CrudService {
     /**
      * Get Backtests
+     * Returns a list of backtests/evaluations with only the id and name
      * @returns BackTestRead Successful Response
      * @throws ApiError
      */
@@ -29,6 +32,13 @@ export declare class CrudService {
      * @throws ApiError
      */
     static createBacktestCrudBacktestsPost(requestBody: BackTestCreate): CancelablePromise<JobResponse>;
+    /**
+     * Delete Backtest Batch
+     * @param ids
+     * @returns any Successful Response
+     * @throws ApiError
+     */
+    static deleteBacktestBatchCrudBacktestsDelete(ids: string): CancelablePromise<any>;
     /**
      * Get Backtest
      * @param backtestId
@@ -44,11 +54,19 @@ export declare class CrudService {
      */
     static deleteBacktestCrudBacktestsBacktestIdDelete(backtestId: number): CancelablePromise<any>;
     /**
-     * Get Predictions
-     * @returns PredictionInfo Successful Response
+     * Update Backtest
+     * @param backtestId
+     * @param requestBody
+     * @returns BackTestRead Successful Response
      * @throws ApiError
      */
-    static getPredictionsCrudPredictionsGet(): CancelablePromise<Array<PredictionInfo>>;
+    static updateBacktestCrudBacktestsBacktestIdPatch(backtestId: number, requestBody: BackTestUpdate): CancelablePromise<BackTestRead>;
+    /**
+     * Get Predictions
+     * @returns NewClass Successful Response
+     * @throws ApiError
+     */
+    static getPredictionsCrudPredictionsGet(): CancelablePromise<Array<NewClass>>;
     /**
      * Create Prediction
      * @param requestBody
@@ -105,24 +123,42 @@ export declare class CrudService {
      */
     static createDatasetCsvCrudDatasetsCsvFilePost(formData: Body_create_dataset_csv_crud_datasets_csvFile_post): CancelablePromise<DataBaseResponse>;
     /**
+     * List Model Templates
+     * Lists all model templates from the db.
+     * @returns ModelTemplateRead Successful Response
+     * @throws ApiError
+     */
+    static listModelTemplatesCrudModelTemplatesGet(): CancelablePromise<Array<ModelTemplateRead>>;
+    /**
+     * List Configured Models
+     * List all configured models from the db
+     * @returns ModelSpecRead Successful Response
+     * @throws ApiError
+     */
+    static listConfiguredModelsCrudConfiguredModelsGet(): CancelablePromise<Array<ModelSpecRead>>;
+    /**
+     * Add Configured Model
+     * Add a configured model to the database
+     * @param requestBody
+     * @returns ConfiguredModelDB Successful Response
+     * @throws ApiError
+     */
+    static addConfiguredModelCrudConfiguredModelsPost(requestBody: ModelConfigurationCreate): CancelablePromise<ConfiguredModelDB>;
+    /**
      * List Models
+     * List all models from the db (alias for configured models)
      * @returns ModelSpecRead Successful Response
      * @throws ApiError
      */
     static listModelsCrudModelsGet(): CancelablePromise<Array<ModelSpecRead>>;
     /**
-     * List Models From Model Templates
-     * @returns ModelSpecRead Successful Response
+     * Add Model
+     * Add a model to the database (alias for configured models)
+     * @param requestBody
+     * @returns ConfiguredModelDB Successful Response
      * @throws ApiError
      */
-    static listModelsFromModelTemplatesCrudModelsFromModelTemplatesGet(): CancelablePromise<Array<ModelSpecRead>>;
-    /**
-     * List Model Templates
-     * Lists all model templates by reading local config files and presenting models.
-     * @returns ModelTemplateConfig Successful Response
-     * @throws ApiError
-     */
-    static listModelTemplatesCrudModelTemplatesGet(): CancelablePromise<Array<ModelTemplateConfig>>;
+    static addModelCrudModelsPost(requestBody: ModelConfigurationCreate): CancelablePromise<ConfiguredModelDB>;
     /**
      * Debug Entry
      * @returns JobResponse Successful Response
@@ -136,11 +172,5 @@ export declare class CrudService {
      * @throws ApiError
      */
     static getDebugEntryCrudDebugDebugIdGet(debugId: number): CancelablePromise<DebugEntry>;
-    /**
-     * List Feature Types
-     * @returns FeatureSource Successful Response
-     * @throws ApiError
-     */
-    static listFeatureTypesCrudFeatureSourcesGet(): CancelablePromise<Array<FeatureSource>>;
 }
 //# sourceMappingURL=CrudService.d.ts.map

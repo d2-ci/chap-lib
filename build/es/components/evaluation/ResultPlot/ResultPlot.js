@@ -1,11 +1,7 @@
 import HighchartsReact from 'highcharts-react-official';
 import Highcharts from 'highcharts';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { getPeriodNameFromId } from '../../../utils/Time';
-
-//import HighchartsMore from "highcharts/highcharts-more";
-
-//HighchartsMore(Highcharts); // Enables the 'arearange' series type
 function syncChartZoom(event) {
   Highcharts.charts.forEach(chart => {
     if (chart) {
@@ -80,7 +76,7 @@ const getOptions = (data, modelName, syncZoom) => {
       labels: {
         enabled: true,
         formatter: function () {
-          return getPeriodNameFromId(this.value);
+          return getPeriodNameFromId(this.value.toString());
         },
         style: {
           fontSize: '0.9rem'
@@ -114,22 +110,12 @@ const getOptions = (data, modelName, syncZoom) => {
     series: getSeries(data)
   };
 };
-export const ResultPlot = _ref => {
-  let {
-    data,
-    modelName,
-    syncZoom
-  } = _ref;
-  const [isRerendering, setIsRerendering] = useState(false);
-  useEffect(() => {
-    setIsRerendering(true);
-  }, [data]);
-  useEffect(() => {
-    if (isRerendering) {
-      setIsRerendering(false);
-    }
-  }, [isRerendering]);
-  return /*#__PURE__*/React.createElement(React.Fragment, null, !isRerendering && /*#__PURE__*/React.createElement(HighchartsReact, {
+export const ResultPlot = ({
+  data,
+  modelName,
+  syncZoom
+}) => {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(HighchartsReact, {
     highcharts: Highcharts,
     options: getOptions(data, modelName, syncZoom)
   }));

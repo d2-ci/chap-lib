@@ -1,11 +1,10 @@
 import React from 'react';
 import styles from './Legend.module.css';
-const Legend = _ref => {
-  let {
-    title,
-    bins,
-    colors
-  } = _ref;
+const Legend = ({
+  title,
+  bins,
+  colors
+}) => {
   console.log('Legend:', bins, colors);
   return /*#__PURE__*/React.createElement("div", {
     className: styles.legend

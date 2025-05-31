@@ -1,14 +1,13 @@
 import { useContext, useEffect } from 'react';
 import { MapContext } from './MapItem';
-const Choropleth = _ref => {
-  let {
-    period,
-    prediction,
-    geojson,
-    dataElement = 'median',
-    bins,
-    colors
-  } = _ref;
+const Choropleth = ({
+  period,
+  prediction,
+  geojson,
+  dataElement = 'median',
+  bins,
+  colors
+}) => {
   const map = useContext(MapContext);
   useEffect(() => {
     if (geojson.hasOwnProperty('features')) {

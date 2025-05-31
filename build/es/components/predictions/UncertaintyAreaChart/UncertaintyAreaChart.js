@@ -12,7 +12,6 @@ accessibility(Highcharts);
 exporting(Highcharts);
 highchartsMore(Highcharts);
 const getChartOptions = (data, predictionTargetName) => {
-  const colors = Highcharts.getOptions().colors;
   const median = data.filter(d => d.dataElement === 'median').map(d => [d.period, d.value]);
   const range = data.filter(d => d.dataElement === 'quantile_low').map(d => [d.period, d.value, data.filter(x => x.dataElement === 'quantile_high' && x.period === d.period)[0].value]);
   return {
@@ -82,11 +81,10 @@ function groupByOrgUnit(data) {
   const orgUnits = [...new Set(data.map(item => item.orgUnit))];
   return orgUnits.map(orgUnit => data.filter(item => item.orgUnit === orgUnit));
 }
-export const UncertaintyAreaChart = _ref => {
-  let {
-    data,
-    predictionTargetName
-  } = _ref;
+export const UncertaintyAreaChart = ({
+  data,
+  predictionTargetName
+}) => {
   const matrix = groupByOrgUnit(data.dataValues);
   const [options, setOptions] = useState(getChartOptions(matrix[0], predictionTargetName));
   const [indexOfSelectedOrgUnit, setIndexOfSelectedOrgUnit] = useState(0);

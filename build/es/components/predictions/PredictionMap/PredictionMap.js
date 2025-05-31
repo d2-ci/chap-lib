@@ -10,11 +10,10 @@ import useOrgUnits from '../../../hooks/useOrgUnits';
 import styles from './PredictionMap.module.css';
 import { createFixedPeriodFromPeriodId } from '@dhis2/multi-calendar-dates';
 const colors = ['#FFFFD4', '#FED98E', '#FE9929', '#D95F0E', '#993404'];
-export const PredictionMap = _ref => {
-  let {
-    data,
-    predictionTargetName
-  } = _ref;
+export const PredictionMap = ({
+  data,
+  predictionTargetName
+}) => {
   // get all orgunits
   const orgUnitIds = getUniqeOrgUnits(data.dataValues);
 

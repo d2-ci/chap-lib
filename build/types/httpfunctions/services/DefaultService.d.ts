@@ -4,7 +4,6 @@ import type { Feature } from '../models/Feature';
 import type { FullPredictionResponse } from '../models/FullPredictionResponse';
 import type { HealthResponse } from '../models/HealthResponse';
 import type { ModelSpec } from '../models/ModelSpec';
-import type { ModelTemplateConfig } from '../models/ModelTemplateConfig';
 import type { PredictionRequest } from '../models/PredictionRequest';
 import type { State } from '../models/State';
 import type { SystemInfoResponse } from '../models/SystemInfoResponse';
@@ -43,12 +42,6 @@ export declare class DefaultService {
      * @throws ApiError
      */
     static listModelsListModelsGet(): CancelablePromise<Array<ModelSpec>>;
-    /**
-     * List Model Templates
-     * @returns ModelTemplateConfig Successful Response
-     * @throws ApiError
-     */
-    static listModelTemplatesListModelTemplatesGet(): CancelablePromise<Array<ModelTemplateConfig>>;
     /**
      * List Features
      * List all available features
