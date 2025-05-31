@@ -36,6 +36,24 @@ export class CrudService {
     });
   }
   /**
+   * Delete Backtest Batch
+   * @param ids
+   * @returns any Successful Response
+   * @throws ApiError
+   */
+  static deleteBacktestBatchCrudBacktestsDelete(ids) {
+    return __request(OpenAPI, {
+      method: 'DELETE',
+      url: '/crud/backtests',
+      query: {
+        'ids': ids
+      },
+      errors: {
+        422: `Validation Error`
+      }
+    });
+  }
+  /**
    * Get Backtest
    * @param backtestId
    * @returns BackTestFull Successful Response
@@ -238,7 +256,50 @@ export class CrudService {
     });
   }
   /**
+   * List Model Templates
+   * Lists all model templates from the db.
+   * @returns ModelTemplateRead Successful Response
+   * @throws ApiError
+   */
+  static listModelTemplatesCrudModelTemplatesGet() {
+    return __request(OpenAPI, {
+      method: 'GET',
+      url: '/crud/model-templates'
+    });
+  }
+  /**
+   * List Configured Models
+   * List all configured models from the db
+   * @returns ModelSpecRead Successful Response
+   * @throws ApiError
+   */
+  static listConfiguredModelsCrudConfiguredModelsGet() {
+    return __request(OpenAPI, {
+      method: 'GET',
+      url: '/crud/configured-models'
+    });
+  }
+  /**
+   * Add Configured Model
+   * Add a configured model to the database
+   * @param requestBody
+   * @returns ConfiguredModelDB Successful Response
+   * @throws ApiError
+   */
+  static addConfiguredModelCrudConfiguredModelsPost(requestBody) {
+    return __request(OpenAPI, {
+      method: 'POST',
+      url: '/crud/configured-models',
+      body: requestBody,
+      mediaType: 'application/json',
+      errors: {
+        422: `Validation Error`
+      }
+    });
+  }
+  /**
    * List Models
+   * List all models from the db (alias for configured models)
    * @returns ModelSpecRead Successful Response
    * @throws ApiError
    */
@@ -249,15 +310,21 @@ export class CrudService {
     });
   }
   /**
-   * List Models V2
-   * List all configured models from the db (new db tables)
-   * @returns ModelSpecRead Successful Response
+   * Add Model
+   * Add a model to the database (alias for configured models)
+   * @param requestBody
+   * @returns ConfiguredModelDB Successful Response
    * @throws ApiError
    */
-  static listModelsV2CrudModelsV2Get() {
+  static addModelCrudModelsPost(requestBody) {
     return __request(OpenAPI, {
-      method: 'GET',
-      url: '/crud/models-v2'
+      method: 'POST',
+      url: '/crud/models',
+      body: requestBody,
+      mediaType: 'application/json',
+      errors: {
+        422: `Validation Error`
+      }
     });
   }
   /**
@@ -284,35 +351,6 @@ export class CrudService {
       path: {
         'debugId': debugId
       },
-      errors: {
-        422: `Validation Error`
-      }
-    });
-  }
-  /**
-   * List Feature Types
-   * @returns FeatureSource Successful Response
-   * @throws ApiError
-   */
-  static listFeatureTypesCrudFeatureSourcesGet() {
-    return __request(OpenAPI, {
-      method: 'GET',
-      url: '/crud/feature-sources'
-    });
-  }
-  /**
-   * Add Configured Model
-   * Add a configured model to the database.
-   * @param requestBody
-   * @returns ConfiguredModelDB Successful Response
-   * @throws ApiError
-   */
-  static addConfiguredModelCrudconfiguredModelPost(requestBody) {
-    return __request(OpenAPI, {
-      method: 'POST',
-      url: '/crudconfigured-model',
-      body: requestBody,
-      mediaType: 'application/json',
       errors: {
         422: `Validation Error`
       }

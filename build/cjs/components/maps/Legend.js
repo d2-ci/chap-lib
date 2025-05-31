@@ -7,12 +7,11 @@ exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _LegendModule = _interopRequireDefault(require("./Legend.module.css"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-const Legend = _ref => {
-  let {
-    title,
-    bins,
-    colors
-  } = _ref;
+const Legend = ({
+  title,
+  bins,
+  colors
+}) => {
   console.log('Legend:', bins, colors);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: _LegendModule.default.legend
