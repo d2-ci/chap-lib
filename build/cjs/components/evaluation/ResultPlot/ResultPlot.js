@@ -22,7 +22,7 @@ const getSeries = data => {
     data: data.realValues,
     zIndex: 4,
     lineWidth: 2.5,
-    type: 'spline',
+    type: 'line',
     color: '#f68000',
     // Different color for real data
     marker: {
