@@ -1,0 +1,1 @@
+{"version":3,"file":"DataList.d.ts","sourceRoot":"","sources":["../../../../src/httpfunctions/models/DataList.ts"],"names":[],"mappings":"AAIA,OAAO,KAAK,EAAE,WAAW,EAAE,MAAM,eAAe,CAAC;AACjD,MAAM,MAAM,QAAQ,GAAG;IACnB,SAAS,EAAE,MAAM,CAAC;IAClB,OAAO,EAAE,MAAM,CAAC;IAChB,IAAI,EAAE,KAAK,CAAC,WAAW,CAAC,CAAC;CAC5B,CAAC"}
