@@ -89,9 +89,10 @@ export declare class AnalyticsService {
     /**
      * Create Backtest With Data
      * @param requestBody
-     * @returns JobResponse Successful Response
+     * @param dryRun If True, only run validation and do not create a backtest
+     * @returns ImportSummaryResponse Successful Response
      * @throws ApiError
      */
-    static createBacktestWithDataAnalyticsCreateBacktestWithDataPost(requestBody: MakeBacktestWithDataRequest): CancelablePromise<JobResponse>;
+    static createBacktestWithDataAnalyticsCreateBacktestWithDataPost(requestBody: MakeBacktestWithDataRequest, dryRun?: boolean): CancelablePromise<ImportSummaryResponse>;
 }
 //# sourceMappingURL=AnalyticsService.d.ts.map

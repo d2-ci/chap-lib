@@ -189,13 +189,17 @@ class AnalyticsService {
   /**
    * Create Backtest With Data
    * @param requestBody
-   * @returns JobResponse Successful Response
+   * @param dryRun If True, only run validation and do not create a backtest
+   * @returns ImportSummaryResponse Successful Response
    * @throws ApiError
    */
-  static createBacktestWithDataAnalyticsCreateBacktestWithDataPost(requestBody) {
+  static createBacktestWithDataAnalyticsCreateBacktestWithDataPost(requestBody, dryRun = false) {
     return (0, _request.request)(_OpenAPI.OpenAPI, {
       method: 'POST',
-      url: '/analytics/create-backtest-with-data',
+      url: '/analytics/create-backtest-with-data/',
+      query: {
+        'dryRun': dryRun
+      },
       body: requestBody,
       mediaType: 'application/json',
       errors: {
