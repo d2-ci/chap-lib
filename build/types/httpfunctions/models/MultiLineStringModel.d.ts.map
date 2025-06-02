@@ -1,0 +1,1 @@
+{"version":3,"file":"MultiLineStringModel.d.ts","sourceRoot":"","sources":["../../../../src/httpfunctions/models/MultiLineStringModel.ts"],"names":[],"mappings":"AAIA,OAAO,KAAK,EAAE,WAAW,EAAE,MAAM,eAAe,CAAC;AACjD,MAAM,MAAM,oBAAoB,GAAG;IAC/B,IAAI,CAAC,EAAE,MAAM,CAAC;IACd,WAAW,EAAE,KAAK,CAAC,KAAK,CAAC,WAAW,CAAC,CAAC,CAAC;CAC1C,CAAC"}
