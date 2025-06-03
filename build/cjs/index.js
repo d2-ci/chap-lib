@@ -24,7 +24,8 @@ var _exportNames = {
   CrudService: true,
   AnalyticsService: true,
   enableQueue: true,
-  disableQueue: true
+  disableQueue: true,
+  getQueue: true
 };
 Object.defineProperty(exports, "AnalyticsService", {
   enumerable: true,
@@ -138,6 +139,12 @@ Object.defineProperty(exports, "evaluationResultToViewData", {
   enumerable: true,
   get: function () {
     return _EvaluationResponse.evaluationResultToViewData;
+  }
+});
+Object.defineProperty(exports, "getQueue", {
+  enumerable: true,
+  get: function () {
+    return _request.getQueue;
   }
 });
 Object.defineProperty(exports, "getSplitPeriod", {

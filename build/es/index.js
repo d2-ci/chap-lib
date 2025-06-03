@@ -15,4 +15,4 @@ export { default as SplitPeriodSelector } from './components/evaluation/SplitPer
 // Services
 export { CrudService } from './httpfunctions/services/CrudService';
 export { AnalyticsService } from './httpfunctions/services/AnalyticsService';
-export { enableQueue, disableQueue } from './httpfunctions/core/request';
+export { enableQueue, disableQueue, getQueue } from './httpfunctions/core/request';

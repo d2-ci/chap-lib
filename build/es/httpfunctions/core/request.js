@@ -281,6 +281,9 @@ export const disableQueue = () => {
     });
   }
 };
+export const getQueue = () => {
+  return queue;
+};
 export const request = (config, options) => {
   const __request = originalRequest.bind(null, config, options);
   if (options.method === 'GET' && queue !== undefined) {

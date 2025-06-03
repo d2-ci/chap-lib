@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.sendRequest = exports.resolve = exports.request = exports.originalRequest = exports.isStringWithValue = exports.isString = exports.isFormData = exports.isDefined = exports.isBlob = exports.getResponseHeader = exports.getResponseBody = exports.getRequestBody = exports.getQueryString = exports.getHeaders = exports.getFormData = exports.enableQueue = exports.disableQueue = exports.catchErrorCodes = exports.base64 = void 0;
+exports.sendRequest = exports.resolve = exports.request = exports.originalRequest = exports.isStringWithValue = exports.isString = exports.isFormData = exports.isDefined = exports.isBlob = exports.getResponseHeader = exports.getResponseBody = exports.getRequestBody = exports.getQueue = exports.getQueryString = exports.getHeaders = exports.getFormData = exports.enableQueue = exports.disableQueue = exports.catchErrorCodes = exports.base64 = void 0;
 var _pQueue = _interopRequireDefault(require("p-queue"));
 var _ApiError = require("./ApiError");
 var _CancelablePromise = require("./CancelablePromise");
@@ -307,6 +307,10 @@ const disableQueue = () => {
   }
 };
 exports.disableQueue = disableQueue;
+const getQueue = () => {
+  return queue;
+};
+exports.getQueue = getQueue;
 const request = (config, options) => {
   const __request = originalRequest.bind(null, config, options);
   if (options.method === 'GET' && queue !== undefined) {

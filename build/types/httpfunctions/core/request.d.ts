@@ -31,6 +31,7 @@ export declare const originalRequest: <T>(config: OpenAPIConfig, options: ApiReq
 type PQueueOptions = ConstructorParameters<typeof PQueue>[0];
 export declare const enableQueue: (queueOptions: PQueueOptions) => PQueue | undefined;
 export declare const disableQueue: () => void;
+export declare const getQueue: () => PQueue | undefined;
 export declare const request: <T>(config: OpenAPIConfig, options: ApiRequestOptions) => CancelablePromise<T>;
 export {};
 //# sourceMappingURL=request.d.ts.map
