@@ -1,0 +1,51 @@
+import React from 'react'
+import { EvaluationPerOrgUnit } from '../../../interfaces/Evaluation'
+import { ComparisonPlot } from '../ComparisonPlot/ComparisonPlot'
+import { Virtuoso, VirtuosoProps } from 'react-virtuoso'
+
+interface ComparisonPlotListProps {
+    evaluationPerOrgUnits: EvaluationPerOrgUnit[]
+    useVirtuoso?: boolean
+    useVirtuosoWindowScroll?: boolean
+    virtuosoProps?: VirtuosoProps<any, any>
+}
+
+export const ComparisonPlotList: React.FC<ComparisonPlotListProps> = ({
+    evaluationPerOrgUnits,
+    useVirtuoso = true,
+    useVirtuosoWindowScroll = false,
+    virtuosoProps,
+}) => {
+    if (!useVirtuoso) {
+        return (
+            <>
+                {evaluationPerOrgUnits.map((orgUnitsData) => {
+                    if (!orgUnitsData) {
+                        return null
+                    }
+
+                    return (
+                        <ComparisonPlot
+                            key={orgUnitsData.orgUnitId}
+                            orgUnitsData={orgUnitsData}
+                        />
+                    )
+                })}
+            </>
+        )
+    }
+
+    return (
+            <Virtuoso
+                {...virtuosoProps}
+                style={{ height: '100%' }}
+                useWindowScroll={useVirtuosoWindowScroll}
+                totalCount={evaluationPerOrgUnits.length}
+                itemContent={(index) => (
+                    <ComparisonPlot
+                        orgUnitsData={evaluationPerOrgUnits[index]}
+                    />
+                )}
+            />
+    )
+}
