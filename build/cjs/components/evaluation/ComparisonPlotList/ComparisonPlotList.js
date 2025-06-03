@@ -8,26 +8,13 @@ var _react = _interopRequireDefault(require("react"));
 var _ComparisonPlot = require("../ComparisonPlot/ComparisonPlot");
 var _reactVirtuoso = require("react-virtuoso");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const ComparisonPlotList = ({
   evaluationPerOrgUnits,
   useVirtuoso = true,
-  useVirtuosoWindowScroll = false
+  useVirtuosoWindowScroll = false,
+  virtuosoProps
 }) => {
-  function getItemContent() {
-    const ItemContent = index => {
-      const orgUnitsData = evaluationPerOrgUnits[index];
-      if (!orgUnitsData) {
-        return null;
-      }
-      return /*#__PURE__*/_react.default.createElement("div", {
-        key: orgUnitsData.orgUnitId
-      }, /*#__PURE__*/_react.default.createElement(_ComparisonPlot.ComparisonPlot, {
-        orgUnitsData: orgUnitsData
-      }));
-    };
-    ItemContent.displayName = 'ItemContent';
-    return ItemContent;
-  }
   if (!useVirtuoso) {
     return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, evaluationPerOrgUnits.map(orgUnitsData => {
       if (!orgUnitsData) {
@@ -39,13 +26,15 @@ const ComparisonPlotList = ({
       });
     }));
   }
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_reactVirtuoso.Virtuoso, {
+  return /*#__PURE__*/_react.default.createElement(_reactVirtuoso.Virtuoso, _extends({}, virtuosoProps, {
     style: {
-      height: '60vh'
+      height: '100%'
     },
     useWindowScroll: useVirtuosoWindowScroll,
     totalCount: evaluationPerOrgUnits.length,
-    itemContent: getItemContent()
+    itemContent: index => /*#__PURE__*/_react.default.createElement(_ComparisonPlot.ComparisonPlot, {
+      orgUnitsData: evaluationPerOrgUnits[index]
+    })
   }));
 };
 exports.ComparisonPlotList = ComparisonPlotList;

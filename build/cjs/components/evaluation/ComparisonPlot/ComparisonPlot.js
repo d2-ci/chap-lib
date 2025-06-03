@@ -8,9 +8,9 @@ var _react = _interopRequireDefault(require("react"));
 var _ComparisonPlotModule = _interopRequireDefault(require("./ComparisonPlot.module.css"));
 var _ResultPlot = require("../ResultPlot/ResultPlot");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-const ComparisonPlot = ({
+const ComparisonPlot = exports.ComparisonPlot = /*#__PURE__*/_react.default.memo(function ComparisonPlot({
   orgUnitsData
-}) => {
+}) {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: _ComparisonPlotModule.default.comparionBox
   }, /*#__PURE__*/_react.default.createElement("div", {
@@ -27,5 +27,4 @@ const ComparisonPlot = ({
       modelName: modelData.modelName
     }));
   })));
-};
-exports.ComparisonPlot = ComparisonPlot;
+});
