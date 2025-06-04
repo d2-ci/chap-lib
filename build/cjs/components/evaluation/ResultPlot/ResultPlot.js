@@ -71,12 +71,13 @@ const getOptions = ({
   syncZoom,
   nameLabel
 }) => {
+  const subtitleText = nameLabel && modelName ? `${nameLabel}: ${modelName}` : modelName ? `Model: ${modelName}` : '';
   return {
     title: {
       text: ''
     },
     subtitle: {
-      text: nameLabel ? nameLabel : modelName ? `Model: ${modelName}` : '',
+      text: subtitleText,
       align: 'left'
     },
     chart: {
