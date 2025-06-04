@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from './ComparisonPlot.module.css';
 import { ResultPlot } from '../ResultPlot/ResultPlot';
-export const ComparisonPlot = ({
-  orgUnitsData
-}) => {
+export const ComparisonPlot = /*#__PURE__*/React.memo(function ComparisonPlot({
+  orgUnitsData,
+  nameLabel
+}) {
   return /*#__PURE__*/React.createElement("div", {
     className: styles.comparionBox
   }, /*#__PURE__*/React.createElement("div", {
@@ -17,7 +18,8 @@ export const ComparisonPlot = ({
     }, /*#__PURE__*/React.createElement(ResultPlot, {
       syncZoom: orgUnitsData.models.length > 1,
       data: modelData.data,
-      modelName: modelData.modelName
+      modelName: modelData.modelName,
+      nameLabel: nameLabel
     }));
   })));
-};
+});
