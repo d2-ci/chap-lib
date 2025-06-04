@@ -58,13 +58,18 @@ const getSeries = data => {
     }
   }];
 };
-const getOptions = (data, modelName, syncZoom) => {
+const getOptions = ({
+  data,
+  modelName,
+  syncZoom,
+  nameLabel
+}) => {
   return {
     title: {
       text: ''
     },
     subtitle: {
-      text: modelName ? 'Model: ' + modelName : '',
+      text: nameLabel ? nameLabel : modelName ? `Model: ${modelName}` : '',
       align: 'left'
     },
     chart: {
@@ -113,10 +118,16 @@ const getOptions = (data, modelName, syncZoom) => {
 export const ResultPlot = ({
   data,
   modelName,
-  syncZoom
+  syncZoom,
+  nameLabel
 }) => {
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(HighchartsReact, {
     highcharts: Highcharts,
-    options: getOptions(data, modelName, syncZoom)
+    options: getOptions({
+      data,
+      modelName,
+      syncZoom,
+      nameLabel
+    })
   }));
 };
