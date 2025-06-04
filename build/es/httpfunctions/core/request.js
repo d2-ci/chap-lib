@@ -297,15 +297,17 @@ export const request = (config, options) => {
         });
         return promise;
       }
-      onCancel(() => {
-        controller.abort();
-      });
       return queue.add(() => {
-        return __request().then(t => resolve(t)).catch(e => reject(e));
+        const promise = __request();
+        onCancel(() => {
+          promise.cancel();
+          controller.abort();
+        });
+        return promise.then(t => resolve(t)).catch(e => reject(e));
       }, {
         signal: controller.signal
       });
     });
   }
-  return __request(config, options);
+  return __request();
 };
