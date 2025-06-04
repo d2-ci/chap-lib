@@ -76,7 +76,7 @@ const getOptions = ({
       text: ''
     },
     subtitle: {
-      text: modelName ? `${nameLabel || 'Model:'} ${modelName}` : '',
+      text: nameLabel ? nameLabel : modelName ? `Model: ${modelName}` : '',
       align: 'left'
     },
     chart: {

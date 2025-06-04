@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './ComparisonPlot.module.css';
 import { ResultPlot } from '../ResultPlot/ResultPlot';
-export const ComparisonPlot = ({
+export const ComparisonPlot = /*#__PURE__*/React.memo(function ComparisonPlot({
   orgUnitsData,
   nameLabel
-}) => {
+}) {
   return /*#__PURE__*/React.createElement("div", {
     className: styles.comparionBox
   }, /*#__PURE__*/React.createElement("div", {
@@ -22,4 +22,4 @@ export const ComparisonPlot = ({
       nameLabel: nameLabel
     }));
   })));
-};
+});

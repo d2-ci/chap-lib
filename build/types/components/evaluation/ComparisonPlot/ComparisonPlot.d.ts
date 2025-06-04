@@ -4,6 +4,6 @@ interface SideBySidePlotsProps {
     orgUnitsData: EvaluationPerOrgUnit;
     nameLabel?: string;
 }
-export declare const ComparisonPlot: React.FC<SideBySidePlotsProps>;
+export declare const ComparisonPlot: React.NamedExoticComponent<SideBySidePlotsProps>;
 export {};
 //# sourceMappingURL=ComparisonPlot.d.ts.map

@@ -1,3 +1,4 @@
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 import React from 'react';
 import { ComparisonPlot } from '../ComparisonPlot/ComparisonPlot';
 import { Virtuoso } from 'react-virtuoso';
@@ -5,23 +6,9 @@ export const ComparisonPlotList = ({
   evaluationPerOrgUnits,
   useVirtuoso = true,
   useVirtuosoWindowScroll = false,
+  virtuosoProps,
   nameLabel
 }) => {
-  function getItemContent() {
-    const ItemContent = index => {
-      const orgUnitsData = evaluationPerOrgUnits[index];
-      if (!orgUnitsData) {
-        return null;
-      }
-      return /*#__PURE__*/React.createElement("div", {
-        key: orgUnitsData.orgUnitId
-      }, /*#__PURE__*/React.createElement(ComparisonPlot, {
-        orgUnitsData: orgUnitsData
-      }));
-    };
-    ItemContent.displayName = 'ItemContent';
-    return ItemContent;
-  }
   if (!useVirtuoso) {
     return /*#__PURE__*/React.createElement(React.Fragment, null, evaluationPerOrgUnits.map(orgUnitsData => {
       if (!orgUnitsData) {
@@ -34,12 +21,15 @@ export const ComparisonPlotList = ({
       });
     }));
   }
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Virtuoso, {
+  return /*#__PURE__*/React.createElement(Virtuoso, _extends({}, virtuosoProps, {
     style: {
-      height: '60vh'
+      height: '100%'
     },
     useWindowScroll: useVirtuosoWindowScroll,
     totalCount: evaluationPerOrgUnits.length,
-    itemContent: getItemContent()
+    itemContent: index => /*#__PURE__*/React.createElement(ComparisonPlot, {
+      orgUnitsData: evaluationPerOrgUnits[index],
+      nameLabel: nameLabel
+    })
   }));
 };
