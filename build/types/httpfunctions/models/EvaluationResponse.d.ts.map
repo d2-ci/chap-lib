@@ -1,0 +1,1 @@
+{"version":3,"file":"EvaluationResponse.d.ts","sourceRoot":"","sources":["../../../../src/httpfunctions/models/EvaluationResponse.ts"],"names":[],"mappings":"AAIA,OAAO,KAAK,EAAE,QAAQ,EAAE,MAAM,YAAY,CAAC;AAC3C,OAAO,KAAK,EAAE,eAAe,EAAE,MAAM,mBAAmB,CAAC;AACzD,MAAM,MAAM,kBAAkB,GAAG;IAC7B,WAAW,EAAE,QAAQ,CAAC;IACtB,WAAW,EAAE,KAAK,CAAC,eAAe,CAAC,CAAC;CACvC,CAAC"}

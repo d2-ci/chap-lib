@@ -1,0 +1,1 @@
+{"version":3,"file":"MultiPolygonModel.d.ts","sourceRoot":"","sources":["../../../../src/httpfunctions/models/MultiPolygonModel.ts"],"names":[],"mappings":"AAIA,OAAO,KAAK,EAAE,WAAW,EAAE,MAAM,eAAe,CAAC;AACjD,MAAM,MAAM,iBAAiB,GAAG;IAC5B,IAAI,CAAC,EAAE,MAAM,CAAC;IACd,WAAW,EAAE,KAAK,CAAC,KAAK,CAAC,KAAK,CAAC,WAAW,CAAC,CAAC,CAAC,CAAC;CACjD,CAAC"}
