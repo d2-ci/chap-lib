@@ -6,6 +6,7 @@ interface ComparisonPlotListProps {
     useVirtuoso?: boolean;
     useVirtuosoWindowScroll?: boolean;
     virtuosoProps?: VirtuosoProps<any, any>;
+    nameLabel?: string;
 }
 export declare const ComparisonPlotList: React.FC<ComparisonPlotListProps>;
 export {};

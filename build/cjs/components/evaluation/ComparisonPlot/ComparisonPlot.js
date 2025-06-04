@@ -9,7 +9,8 @@ var _ComparisonPlotModule = _interopRequireDefault(require("./ComparisonPlot.mod
 var _ResultPlot = require("../ResultPlot/ResultPlot");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 const ComparisonPlot = exports.ComparisonPlot = /*#__PURE__*/_react.default.memo(function ComparisonPlot({
-  orgUnitsData
+  orgUnitsData,
+  nameLabel
 }) {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: _ComparisonPlotModule.default.comparionBox
@@ -24,7 +25,8 @@ const ComparisonPlot = exports.ComparisonPlot = /*#__PURE__*/_react.default.memo
     }, /*#__PURE__*/_react.default.createElement(_ResultPlot.ResultPlot, {
       syncZoom: orgUnitsData.models.length > 1,
       data: modelData.data,
-      modelName: modelData.modelName
+      modelName: modelData.modelName,
+      nameLabel: nameLabel
     }));
   })));
 });

@@ -13,7 +13,8 @@ const ComparisonPlotList = ({
   evaluationPerOrgUnits,
   useVirtuoso = true,
   useVirtuosoWindowScroll = false,
-  virtuosoProps
+  virtuosoProps,
+  nameLabel
 }) => {
   if (!useVirtuoso) {
     return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, evaluationPerOrgUnits.map(orgUnitsData => {
@@ -22,7 +23,8 @@ const ComparisonPlotList = ({
       }
       return /*#__PURE__*/_react.default.createElement(_ComparisonPlot.ComparisonPlot, {
         key: orgUnitsData.orgUnitId,
-        orgUnitsData: orgUnitsData
+        orgUnitsData: orgUnitsData,
+        nameLabel: nameLabel
       });
     }));
   }
@@ -33,7 +35,8 @@ const ComparisonPlotList = ({
     useWindowScroll: useVirtuosoWindowScroll,
     totalCount: evaluationPerOrgUnits.length,
     itemContent: index => /*#__PURE__*/_react.default.createElement(_ComparisonPlot.ComparisonPlot, {
-      orgUnitsData: evaluationPerOrgUnits[index]
+      orgUnitsData: evaluationPerOrgUnits[index],
+      nameLabel: nameLabel
     })
   }));
 };

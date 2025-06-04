@@ -6,7 +6,8 @@ export const ComparisonPlotList = ({
   evaluationPerOrgUnits,
   useVirtuoso = true,
   useVirtuosoWindowScroll = false,
-  virtuosoProps
+  virtuosoProps,
+  nameLabel
 }) => {
   if (!useVirtuoso) {
     return /*#__PURE__*/React.createElement(React.Fragment, null, evaluationPerOrgUnits.map(orgUnitsData => {
@@ -15,7 +16,8 @@ export const ComparisonPlotList = ({
       }
       return /*#__PURE__*/React.createElement(ComparisonPlot, {
         key: orgUnitsData.orgUnitId,
-        orgUnitsData: orgUnitsData
+        orgUnitsData: orgUnitsData,
+        nameLabel: nameLabel
       });
     }));
   }
@@ -26,7 +28,8 @@ export const ComparisonPlotList = ({
     useWindowScroll: useVirtuosoWindowScroll,
     totalCount: evaluationPerOrgUnits.length,
     itemContent: index => /*#__PURE__*/React.createElement(ComparisonPlot, {
-      orgUnitsData: evaluationPerOrgUnits[index]
+      orgUnitsData: evaluationPerOrgUnits[index],
+      nameLabel: nameLabel
     })
   }));
 };
