@@ -22,7 +22,10 @@ var _exportNames = {
   StatusIndicator: true,
   SplitPeriodSelector: true,
   CrudService: true,
-  AnalyticsService: true
+  AnalyticsService: true,
+  enableQueue: true,
+  disableQueue: true,
+  getQueue: true
 };
 Object.defineProperty(exports, "AnalyticsService", {
   enumerable: true,
@@ -120,10 +123,28 @@ Object.defineProperty(exports, "createHighChartsData", {
     return _EvaluationResponse.createHighChartsData;
   }
 });
+Object.defineProperty(exports, "disableQueue", {
+  enumerable: true,
+  get: function () {
+    return _request.disableQueue;
+  }
+});
+Object.defineProperty(exports, "enableQueue", {
+  enumerable: true,
+  get: function () {
+    return _request.enableQueue;
+  }
+});
 Object.defineProperty(exports, "evaluationResultToViewData", {
   enumerable: true,
   get: function () {
     return _EvaluationResponse.evaluationResultToViewData;
+  }
+});
+Object.defineProperty(exports, "getQueue", {
+  enumerable: true,
+  get: function () {
+    return _request.getQueue;
   }
 });
 Object.defineProperty(exports, "getSplitPeriod", {
@@ -162,4 +183,5 @@ var _ui = require("./ui");
 var _SplitPeriodSelector = _interopRequireDefault(require("./components/evaluation/SplitPeriodSelector/SplitPeriodSelector"));
 var _CrudService = require("./httpfunctions/services/CrudService");
 var _AnalyticsService = require("./httpfunctions/services/AnalyticsService");
+var _request = require("./httpfunctions/core/request");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }

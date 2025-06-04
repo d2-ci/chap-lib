@@ -1,3 +1,4 @@
+import PQueue from 'p-queue';
 import type { ApiRequestOptions } from './ApiRequestOptions';
 import type { ApiResult } from './ApiResult';
 import { CancelablePromise } from './CancelablePromise';
@@ -26,6 +27,11 @@ export declare const catchErrorCodes: (options: ApiRequestOptions, result: ApiRe
  * @returns CancelablePromise<T>
  * @throws ApiError
  */
+export declare const originalRequest: <T>(config: OpenAPIConfig, options: ApiRequestOptions) => CancelablePromise<T>;
+type PQueueOptions = ConstructorParameters<typeof PQueue>[0];
+export declare const enableQueue: (queueOptions: PQueueOptions) => PQueue | undefined;
+export declare const disableQueue: () => void;
+export declare const getQueue: () => PQueue | undefined;
 export declare const request: <T>(config: OpenAPIConfig, options: ApiRequestOptions) => CancelablePromise<T>;
 export {};
 //# sourceMappingURL=request.d.ts.map
