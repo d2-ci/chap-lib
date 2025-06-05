@@ -132,7 +132,7 @@ const getOptions = ({
             min: 0,
         },
         tooltip: {
-            crosshair: true,
+            crosshairs: true,
             shared: true,
             valueSuffix: ' cases',
         },
