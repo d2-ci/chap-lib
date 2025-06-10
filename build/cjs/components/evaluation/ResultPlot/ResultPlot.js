@@ -8,7 +8,9 @@ var _highchartsReactOfficial = _interopRequireDefault(require("highcharts-react-
 var _highcharts = _interopRequireDefault(require("highcharts"));
 var _react = _interopRequireDefault(require("react"));
 var _Time = require("../../../utils/Time");
+var _offlineExporting = _interopRequireDefault(require("highcharts/modules/offline-exporting"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+(0, _offlineExporting.default)(_highcharts.default);
 function syncChartZoom(event) {
   _highcharts.default.charts.forEach(chart => {
     if (chart) {
@@ -120,7 +122,10 @@ const getOptions = ({
         }
       }
     },
-    series: getSeries(data)
+    series: getSeries(data),
+    exporting: {
+      fallbackToExportServer: false
+    }
   };
 };
 const ResultPlot = ({
