@@ -71,7 +71,8 @@ const getOptions = ({
   data,
   modelName,
   syncZoom,
-  nameLabel
+  nameLabel,
+  maxY
 }) => {
   const subtitleText = nameLabel && modelName ? `${nameLabel}: ${modelName}` : modelName ? `Model: ${modelName}` : '';
   return {
@@ -83,7 +84,9 @@ const getOptions = ({
       align: 'left'
     },
     chart: {
-      zoomType: 'x'
+      zooming: {
+        type: 'x'
+      }
     },
     xAxis: {
       categories: data.periods,
@@ -97,21 +100,24 @@ const getOptions = ({
           fontSize: '0.9rem'
         }
       },
-      events: syncZoom && {
-        afterSetExtremes: syncChartZoom
-      },
+      events: syncZoom ? {
+        afterSetExtremes: typeof syncZoom === 'function' ? syncZoom : syncChartZoom
+      } : undefined,
       title: {
         text: 'Period'
-      }
+      },
+      crosshair: true,
+      zoomEnabled: true
     },
     yAxis: {
       title: {
         text: null
       },
-      min: 0
+      min: 0,
+      zoomEnabled: false,
+      max: maxY || undefined
     },
     tooltip: {
-      crosshairs: true,
       shared: true,
       valueSuffix: ' cases'
     },
@@ -128,20 +134,22 @@ const getOptions = ({
     }
   };
 };
-const ResultPlot = ({
+const ResultPlot = exports.ResultPlot = /*#__PURE__*/_react.default.forwardRef(function ResultPlot({
   data,
   modelName,
   syncZoom,
-  nameLabel
-}) => {
+  nameLabel,
+  maxY
+}, ref) {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_highchartsReactOfficial.default, {
+    ref: ref,
     highcharts: _highcharts.default,
     options: getOptions({
       data,
       modelName,
       syncZoom,
-      nameLabel
+      nameLabel,
+      maxY
     })
   }));
-};
-exports.ResultPlot = ResultPlot;
+});
